@@ -1,38 +1,30 @@
-.App {
-  text-align: center;
+:root{
+    --borderRadius: 10px;
+    --accentColor2: aqua;
+    --darkBgColor: #222;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background-image: url('/marble.jpg');
+    background-color: var(--darkBgColor);
+    background-repeat: repeat-y;
+    color: white;
+    -webkit-background-size: contain!important;
+    -moz-background-size: contain!important;
+    -o-background-size: contain!important;
+    background-size: contain!important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p{
+    font-size: 1.2rem;
+    line-height: 1.7rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bg-dark{
+    background-color: var(--darkBgColor)!important;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html{
+    height: 100%;
 }

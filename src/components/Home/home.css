@@ -1,0 +1,21 @@
+.anchor::before{
+    /* z-index: ; */
+    display: block;
+    height: 50px;
+    content: "";
+}
+
+body{
+    scroll-behavior: smooth;
+    margin-bottom: 200px;
+}
+
+p{
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+li{
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
