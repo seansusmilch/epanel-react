@@ -1,3 +1,38 @@
+# Emby Panel React
+
+This app is not affiliated with Emby in any way. This is a personal project I made for fun/learning.
+
+## What that backend do?
+This is what the backend (epanel-express) should do to satisfy the needs of the frontend, epanel-react.
+* Handle users
+    * Verify idToken with firebase
+    * Get userdata
+    * Create document in user collection if one doesnt exist
+* Get config stuff
+    * Status
+    * Announcement
+    * Emby stuff
+* Check status of an emby server and update firestore accordingly
+
+### In the future?
+* Handle invite codes
+    * Log who used an invite
+    * Track number of invite uses
+    * Get invite data
+    * Validate invites
+    * Invite the user to the emby server
+        * Make account on emby server
+        * Set default config for user
+        * Set random password
+        * Attach given emby connect username to account
+        * Return response
+            * Handle 'user already exists/linked to server'
+            * Handle 'connect user not found'
+            * Others? 
+
+
+
+# Generated README
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
