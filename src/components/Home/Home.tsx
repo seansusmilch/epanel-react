@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import './home.css'
 import {StatusSection} from './status/Section'
 import marked from 'marked'
 import {QLinks} from './qlinks/QLinks'
+import {UserContext} from '../Auth'
 
-export const Home = ()=>{
+export const Home: React.FC = ()=>{
     const [md, setMd] = useState<string>('')
 
     useEffect(() =>{
@@ -19,6 +20,9 @@ export const Home = ()=>{
             })
     },[])
 
+    const user = useContext(UserContext)
+    // console.log('user', user? user : 'null')
+
     return (
         <div>
             <StatusSection
@@ -32,7 +36,12 @@ export const Home = ()=>{
                 isAdmin={true}
             />
             {/* markdonw */}
-            <div dangerouslySetInnerHTML={{__html: md}}/>
+            {user != null ? <div dangerouslySetInnerHTML={{__html: md}}/>
+            :
+            <div className='text-center'>
+                <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
+            </div>
+            }
         </div>
     )
 }
