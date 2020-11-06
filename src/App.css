@@ -5,15 +5,19 @@
 
 }
 
+html{
+    height: 100%;
+}
+
 body{
     background-image: url('/marble.jpg');
     background-color: var(--darkBgColor);
     background-repeat: repeat-y;
     color: white;
-    -webkit-background-size: contain!important;
-    -moz-background-size: contain!important;
-    -o-background-size: contain!important;
-    background-size: contain!important;
+    -webkit-background-size: cover!important;
+    -moz-background-size: cover!important;
+    -o-background-size: cover!important;
+    background-size: cover!important;
 }
 
 p{
@@ -25,6 +29,6 @@ p{
     background-color: var(--darkBgColor)!important;
 }
 
-html{
-    height: 100%;
+.rounded{
+    border-radius: var(--borderRadius)!important;
 }
