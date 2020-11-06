@@ -7,7 +7,7 @@ interface Props {
 
 }
 
-export const QLinks = (props:Props)=>{
+export const QLinks: React.FC<Props> = (props:Props)=>{
     return (
         <div className='m-auto bg-dark p-1' id='qlinks'>
             <h5 className='mr-auto ml-auto'>
