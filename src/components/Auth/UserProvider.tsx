@@ -1,23 +1,54 @@
 import React, {createContext, useEffect, useState} from 'react'
-import {auth} from '../../base'
+import {auth, backend} from '../../base'
+import axios from 'axios'
+import firebase from 'firebase'
 
+export const UserContext = createContext(auth.currentUser as any)
 
-export const UserContext = createContext(auth.currentUser)
+export interface User {
+    uid: string
+    
+}
+
+export let idToken = ''
 
 export const UserProvider: React.FC = (props)=>{
     const [user, setUser] = useState<any>()
 
+    // console.log('backend',backend)
+
     useEffect(() => {
-        auth.onAuthStateChanged((usr)=>{
+        auth.onAuthStateChanged(async (usr:any)=>{
             
             /** @todo
              * TODO:
              * Go to the backend and get user data
              * Add userdata to this usr object
              */
-            usr?.getIdToken(true).then((idToken)=>{
-                console.log('idToken ',idToken)
+            usr?.getIdToken(true).then((token:string)=>{
+                // console.log('idToken ',token)
+                let uid = usr?.uid
+                axios({
+                    method: 'POST',
+                    url: `${backend}/user/${uid}`,
+                    data:{
+                        idToken: token
+                    }
+                })
+                    .then((res)=>{
+                        // console.log('resdata',usr)
+                        usr = {
+                            ...usr,
+                            ...res.data.user
+                        }
+                        setUser(usr)
+                        idToken = token
+                        // console.log('Logged in?')
+                        return
+                    })
+                // axios.post(`${backend}/user/${uid}`,{idToken: token})
             })
+            // console.log('You must have logged out')
             setUser(usr)
         })
     },[])

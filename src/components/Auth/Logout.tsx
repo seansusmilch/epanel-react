@@ -6,10 +6,10 @@ export const LogoutPage: React.FC = ()=>{
     auth.signOut()
 
     return(
-        // <div>
-        //     <h1>Successfully logged out</h1>
-            
-        // </div>
-        <Redirect to='/'/>
+        <div>
+            <h1>Successfully logged out</h1>
+            <Redirect to='/'/>
+        </div>
+        
     )
 }
