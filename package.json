@@ -1,6 +1,7 @@
 {
   "name": "epanel-react",
   "version": "0.1.0",
+  "proxy": "http://localhost:4200",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -12,6 +13,7 @@
     "@types/react": "^16.9.52",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
+    "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "firebase": "^8.0.0",
     "firebase-admin": "^9.3.0",

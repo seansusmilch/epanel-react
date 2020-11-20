@@ -27,6 +27,8 @@ export const signInWithGoogle = () => {
     auth.signInWithPopup(provider)
 }
 
+export const backend = process.env.REACT_APP_BACKEND
+
 // export const signInAnon = () => {
 //     console.log('Sigining into Guest account')
 //     auth.signInAnonymously()

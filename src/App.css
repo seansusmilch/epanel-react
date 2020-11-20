@@ -2,7 +2,13 @@
     --borderRadius: 10px;
     --accentColor2: aqua;
     --darkBgColor: #222;
+    --secondBgColor: #444;
 
+    --formBgColor: #111;
+    --formTxtColor: #bbb;
+    --formBgColorFocus: #333;
+    --formTxtColorFocus: white;
+    --formBgColorDisabled: #111;
 }
 
 html{
@@ -28,7 +34,31 @@ p{
 .bg-dark{
     background-color: var(--darkBgColor)!important;
 }
+.bg-secondary{
+    background-color: var(--secondBgColor);
+}
 
 .rounded{
     border-radius: var(--borderRadius)!important;
+}
+
+
+.form-control{
+    color: var(--formTxtColor);
+    background-color: var(--formBgColor);
+    border: none;
+    outline: none;
+}
+
+.form-control:focus{
+    color: var(--formTxtColorFocus);
+    background-color: var(--formBgColorFocus);
+    outline: none!important;
+    box-shadow: none!important;
+    border-bottom: 2px solid #555;
+}
+
+.form-control:disabled{
+    background-color: var(--formBgColorDisabled)!important;
+    opacity: 0.5!important;
 }
