@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {
     statusText: string,
-    up: boolean,
+    statusColor: string,
 }
 
 export const ServerStatus: React.FC<Props> = (props)=>{
@@ -12,7 +12,7 @@ export const ServerStatus: React.FC<Props> = (props)=>{
     <div className="status">
         Status: 
         <div className="status-text" style={{ 
-            backgroundColor: props.up ? 'green' : 'red'
+            backgroundColor: props.statusColor
         }}>
             {props.statusText}
         </div>

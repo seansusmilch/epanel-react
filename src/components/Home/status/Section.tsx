@@ -4,7 +4,7 @@ import { ServerStatus } from './ServerStatus';
 import "./section.css"
 
 interface Props {
-    up: boolean,
+    statusColor: string,
     announcement: string,
     statusText: string,
 }
@@ -12,7 +12,7 @@ interface Props {
 export const StatusSection: React.FC<Props> = (props)=>{
     return(
     <div className="status-section container">
-        <ServerStatus statusText={props.statusText} up={props.up} />
+        <ServerStatus statusText={props.statusText} statusColor={props.statusColor} />
         <Announcement announcement={props.announcement} />
     </div>
     )

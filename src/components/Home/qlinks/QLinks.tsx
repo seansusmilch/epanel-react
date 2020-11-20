@@ -27,7 +27,7 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                     </a>
                 </div>
 
-                {props.isLoggedIn && props.isAdmin && 
+                {props.isLoggedIn && props.isAdmin ? 
 
                     <div className="dropdown show">
                         <div className="btn-group dropup">
@@ -50,8 +50,8 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                             </div>
                         </div>
                     </div>
-                }
-                {!props.isAdmin &&
+
+                    :
                     <div className="p-2">
                         <a href="https://discord.gg/PBP7jqV">
                             <img src={'./logos/discord-icon.png'} className="qlink" alt=""/>

@@ -3,12 +3,12 @@ import './nav.css'
 import { NavLink } from 'react-router-dom'
 import {UserContext} from '../Auth'
 
-interface Props {
-    isLoggedIn: boolean
-    isAdmin: boolean
-}
+// interface Props {
+//     isLoggedIn: boolean
+//     isAdmin: boolean
+// }
 
-export const Navigation: React.FC<Props> = (props:Props)=>{
+export const Navigation: React.FC = ()=>{
 
     const user = useContext(UserContext)
 
@@ -24,14 +24,13 @@ export const Navigation: React.FC<Props> = (props:Props)=>{
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                         <NavLink to="/" className="nav-link" activeClassName='is-active' exact>Home</NavLink>
-                        {user ?
+                        {user && user.isAdmin ?
                             <div>
                                 <NavLink to="/config" className="nav-link" activeClassName='is-active'>Config</NavLink>
                             </div>
                             :
                             ''
                         }
-                        <NavLink to="/todo" className="nav-link" activeClassName='is-active'>ToDo</NavLink>
                     
                     <div className='navbar-nav ml-auto'>
 

@@ -5,8 +5,18 @@ import marked from 'marked'
 import {QLinks} from './qlinks/QLinks'
 import {UserContext} from '../Auth'
 
-export const Home: React.FC = ()=>{
+import {StatusProps} from '../Props'
+import {backend} from '../../base'
+import axios from 'axios'
+
+interface Props {
+    getStatus: ()=>Promise<StatusProps>
+}
+
+export const Home: React.FC<Props> = (props:Props)=>{
     const [md, setMd] = useState<string>('')
+
+    const [status,setStatus] = useState<StatusProps>()
 
     useEffect(() =>{
         const mdPath = require('./home.md')
@@ -20,23 +30,43 @@ export const Home: React.FC = ()=>{
             })
     },[])
 
+    useEffect(() =>{
+        // const fetchStatus = async()=>{
+        //     const res = await axios(`${backend}/config/status`)
+        //     setStatus(res.data)
+        // }
+        // fetchStatus()
+        const fetch = async()=>{
+            setStatus(await props.getStatus())
+        }
+        fetch()
+
+        let autoUpdate = setInterval(fetch, 3000)
+
+        return ()=>{
+            // console.log('Cleared!!!!')
+            clearInterval(autoUpdate)
+        }
+    },[])
+
+
     const user = useContext(UserContext)
     // console.log('user', user? user : 'null')
 
     return (
         <div>
             <StatusSection
-                announcement="Poggy woggy dub dub"
-                up={true}
-                statusText="POGGIES"
+                announcement={status ? status.current.announcement : ''}
+                statusColor={status ? status.current.status_col : ''}
+                statusText={status ? status.current.status_msg : ''}
             />
             {/* Links compoonnntt */}
             <QLinks
-                isLoggedIn={true}
-                isAdmin={true}
+                isLoggedIn={user ? true:false}
+                isAdmin={user ? user.isAdmin: false}
             />
             {/* markdonw */}
-            {user != null ? <div dangerouslySetInnerHTML={{__html: md}}/>
+            {user != null ? <div><h2>Info Goes Here</h2></div>
             :
             <div className='text-center'>
                 <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
