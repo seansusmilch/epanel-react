@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {auth} from '../../base'
 import {Redirect} from 'react-router'
 
 export const LogoutPage: React.FC = ()=>{
-    auth.signOut()
+
+    useEffect(() => {
+        console.log('Signing user out')
+        auth.signOut()
+    },[])
+    
 
     return(
         <div>

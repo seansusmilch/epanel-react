@@ -6,7 +6,8 @@ import {QLinks} from './qlinks/QLinks'
 import {UserContext} from '../Auth'
 
 import {StatusProps} from '../Props'
-import {backend} from '../../base'
+// import {backend} from '../../base'
+import {getStatus} from '../../base'
 import axios from 'axios'
 
 interface Props {
@@ -41,7 +42,7 @@ export const Home: React.FC<Props> = (props:Props)=>{
         }
         fetch()
 
-        let autoUpdate = setInterval(fetch, 3000)
+        let autoUpdate = setInterval(fetch, 30000)
 
         return ()=>{
             // console.log('Cleared!!!!')

@@ -1,20 +1,21 @@
 import React, { useContext, useEffect, useState } from "react"
 import {Status, defaultStatus} from './Status/Status'
-import {StatusProps} from '../Props'
+import {StatusProps, NewStatus} from '../Props'
 import axios from 'axios'
-import {backend} from '../../base'
+// import {backend} from '../../base'
 import {UserContext,idToken} from '../Auth'
 import { Redirect } from "react-router-dom"
 
 
 interface Props{
-    getConfig: ()=>void //change
+    // getConfig: ()=>void //change
     getStatus: ()=>Promise<StatusProps>
+    setStatus: (newStatus:StatusProps)=>Promise<void>
 }
 
 export const Config: React.FC<Props> = (props) => {
 
-    const [status,setStatus] = useState<StatusProps>()
+    const [status,setStateStatus] = useState<StatusProps>()
 
     const user = useContext(UserContext)    
 
@@ -25,21 +26,12 @@ export const Config: React.FC<Props> = (props) => {
         // }
         // fetchStatus()
         const fetchStatus = async()=>{
-            setStatus(await props.getStatus())
+            setStateStatus(await props.getStatus())
         }
         fetchStatus()
     },[])
 
-    const submitStatus = async(values:{
-        announcement: string
-        auto: boolean
-        down_col: string
-        down_msg: string
-        status_col: string
-        status_msg: string
-        up_col: string
-        up_msg: string
-    })=>{
+    const submitStatus = async(values:NewStatus)=>{
 
         if(!status){
             console.log('Status is null!!!', status)
@@ -65,21 +57,9 @@ export const Config: React.FC<Props> = (props) => {
             newStatus.current.status_msg = values.status_msg
         }
 
-        setStatus(newStatus)
+        setStateStatus(newStatus)
 
-        //send to backend
-        console.log(user)
-        const body = {
-            uid: user.uid,
-            idToken: idToken,
-
-            status: newStatus
-        }
-        console.log(body)
-        axios.post(`${backend}/config/status`, body)
-            .then((res)=>{
-                console.log(res.data)
-            })
+        props.setStatus(newStatus)
     }
 
     return (
@@ -96,6 +76,9 @@ export const Config: React.FC<Props> = (props) => {
             }
         </div>
         :
-        <Redirect to='/'/>
+        <div>
+            Please log in
+        </div>
+        // <Redirect to='/'/>
     )
 }

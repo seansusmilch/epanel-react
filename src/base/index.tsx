@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+import {signInWithGoogle, getStatus, setStatus, getUser} from './func'
 
 dotenv.config()
 
@@ -20,16 +21,4 @@ firebase.initializeApp(fireConf)
 export const auth = firebase.auth()
 export const firestore =  firebase.firestore()
 
-const provider = new firebase.auth.GoogleAuthProvider()
-
-export const signInWithGoogle = () => {
-    console.log('Signing in with Google')
-    auth.signInWithPopup(provider)
-}
-
-export const backend = process.env.REACT_APP_BACKEND
-
-// export const signInAnon = () => {
-//     console.log('Sigining into Guest account')
-//     auth.signInAnonymously()
-// }
+export {signInWithGoogle, getStatus, setStatus, getUser}

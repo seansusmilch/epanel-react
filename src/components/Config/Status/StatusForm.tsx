@@ -93,7 +93,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             className='form-control form-control-lg mb-2' 
                                             disabled={!props.status.auto} 
                                             // onChange={handleChange}
-                                            onChange={(e:any) => props.set.up_msg(e.target.value)}
+                                            onBlur={(e:any) => props.set.up_msg(e.target.value)}
                                         />
                                     </div>
                                     <div className='col-auto'>
@@ -102,7 +102,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             name="up_col" 
                                             className='form-control form-control-lg mb-2' 
                                             disabled={!props.status.auto} 
-                                            onChange={(e:any)=>props.set.up_col(e.target.value)}
+                                            onBlur={(e:any)=>props.set.up_col(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             name="down_msg" 
                                             className='form-control form-control-lg mb-2'
                                             disabled={!props.status.auto} 
-                                            onChange={(e:any)=>props.set.down_msg(e.target.value)}
+                                            onBlur={(e:any)=>props.set.down_msg(e.target.value)}
                                         />
                                     </div>
                                     <div className='col-auto'>
@@ -124,7 +124,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             name="down_col" 
                                             className='form-control form-control-lg mb-2' 
                                             disabled={!props.status.auto} 
-                                            onChange={(e:any)=>props.set.down_col(e.target.value)}
+                                            onBlur={(e:any)=>props.set.down_col(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             name='status_msg' 
                                             className='form-control form-control-lg mb-2' 
                                             disabled={props.status.auto}
-                                            onChange={(e:any)=>props.set.status_msg(e.target.value)}
+                                            onBlur={(e:any)=>props.set.status_msg(e.target.value)}
                                         />
                                     </div>
                                     <div className='col-auto'>
@@ -151,7 +151,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             name='status_col' 
                                             className='form-control form-control-lg mb-2' 
                                             disabled={props.status.auto}
-                                            onChange={(e:any)=>props.set.status_col(e.target.value)}
+                                            onBlur={(e:any)=>props.set.status_col(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -162,7 +162,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                             type='textarea' 
                                             name='announcement' 
                                             className='form-control form-control-lg mb-2'
-                                            onChange={(e:any)=>props.set.announcement(e.target.value)}
+                                            onBlur={(e:any)=>props.set.announcement(e.target.value)}
                                         />
                                     </div>
                                 </div>
