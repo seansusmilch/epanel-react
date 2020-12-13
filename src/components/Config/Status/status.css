@@ -1,7 +1,7 @@
 #preview {
     min-height: calc(50vh - 50px);
     text-align: center;
-    font-size: 4vh;
+    font-size: 2rem;
     padding: 10px;
     font-weight: 600;
 }
@@ -39,4 +39,16 @@
     padding: 10px!important;
     border-radius: var(--borderRadius);
     /* border-radius: 10px; */
+}
+
+@media(max-width: 767px){
+    #preview{
+        min-height: calc(80vh - 50px);
+    }
+    #status{
+        top: calc(41% + 3rem);
+    }
+    #announcement{
+        top: calc(74% + 3rem);
+    }
 }

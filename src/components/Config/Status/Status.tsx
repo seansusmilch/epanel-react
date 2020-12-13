@@ -94,7 +94,7 @@ export const Status: React.FC<Props> = (props) => {
     },[auto,isUp,down_col,up_col,down_msg,up_msg,status_col,status_msg,announcement])
 
     return(
-        <div>
+        <section>
             <h1>Status Section</h1>
 
             <StatusPreview
@@ -107,6 +107,6 @@ export const Status: React.FC<Props> = (props) => {
                 status={status}
             />
 
-        </div>
+        </section>
     )
 }

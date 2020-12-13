@@ -1,21 +1,30 @@
-.anchor::before{
+.anchor::before {
     /* z-index: ; */
     display: block;
     height: 50px;
     content: "";
 }
 
-body{
+body {
     scroll-behavior: smooth;
     margin-bottom: 200px;
 }
 
-p{
-    font-size: 1.2rem;
+p {
+    font-size: 1.1rem;
     line-height: 1.7rem;
 }
 
-li{
+li {
     font-size: 1.1rem;
     line-height: 2rem;
+}
+
+section {
+    height: calc(100vh - 59px);
+    /* border: 1px solid red; */
+}
+
+img {
+    max-height: 50vh;
 }

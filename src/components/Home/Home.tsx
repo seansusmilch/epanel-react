@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import './home.css'
 import {StatusSection} from './status/Section'
-import marked from 'marked'
 import {QLinks} from './qlinks/QLinks'
 import {UserContext} from '../Auth'
 
@@ -9,6 +8,9 @@ import {StatusProps} from '../Props'
 // import {backend} from '../../base'
 import {getStatus} from '../../base'
 import axios from 'axios'
+
+import marked from 'marked'
+import ReactMarkdown from 'react-markdown'
 
 interface Props {
     getStatus: ()=>Promise<StatusProps>
@@ -20,14 +22,14 @@ export const Home: React.FC<Props> = (props:Props)=>{
     const [status,setStatus] = useState<StatusProps>()
 
     useEffect(() =>{
-        const mdPath = require('./home.md')
+        const mdPath = require('./docs.md')
 
         fetch(mdPath)
             .then((res: any) =>{
                 return res.text()
             })
             .then((text: string)=>{
-                setMd(marked(text))
+                setMd(text)
             })
     },[])
 
@@ -38,6 +40,7 @@ export const Home: React.FC<Props> = (props:Props)=>{
         // }
         // fetchStatus()
         const fetch = async()=>{
+            // console.log('fetched status!')
             setStatus(await props.getStatus())
         }
         fetch()
@@ -56,23 +59,27 @@ export const Home: React.FC<Props> = (props:Props)=>{
 
     return (
         <div>
-            <StatusSection
-                announcement={status ? status.current.announcement : ''}
-                statusColor={status ? status.current.status_col : ''}
-                statusText={status ? status.current.status_msg : ''}
-            />
-            {/* Links compoonnntt */}
-            <QLinks
-                isLoggedIn={user ? true:false}
-                isAdmin={user ? user.isAdmin: false}
-            />
+            <section>
+                <StatusSection
+                    announcement={status ? status.current.announcement : ''}
+                    statusColor={status ? status.current.status_col : ''}
+                    statusText={status ? status.current.status_msg : ''}
+                />
+                {/* Links compoonnntt */}
+                <QLinks
+                    isLoggedIn={user ? true:false}
+                    isAdmin={user ? user.isAdmin: false}
+                />
+            </section>
             {/* markdonw */}
-            {user != null ? <div><h2>Info Goes Here</h2></div>
+            {user != null ? <div><ReactMarkdown source={md} allowDangerousHtml={true} /></div>
             :
             <div className='text-center'>
                 <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
             </div>
             }
+
+            <br/><br/><br/><br/><br/>
         </div>
     )
 }

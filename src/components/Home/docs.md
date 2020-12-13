@@ -49,8 +49,8 @@ If your question is not here or wasn't answered, feel free to get ahold of me.
     <li>If I decide to add you, I will get back to you once I've added your account.</li>
     <li>Once added, you should get an email similar to this one. 
         Click the link that says <code>I Confirm This Link</code>
-        <a href="{{url_for('static',filename='img/connectemail.png')}}">
-            <img src="{{url_for('static',filename='img/connectemail.png')}}" class="img-fluid rounded mx-auto d-block" alt="image">
+        <a href="docs/connectemail.png">
+            <img src="docs/connectemail.png" class="img-fluid rounded mx-auto d-block" alt="image">
         </a>
     </li>
     <li>Done!</li>
@@ -142,8 +142,8 @@ client if you aren't interested in downloading media and would be fine just stre
     <li>Open the app and tap <code>Next</code></li>
     <li>Enter your <code>Username/Email</code> and <code>Password</code> and click <code>Sign In</code>.</li>
     <li>You should be a screen like this one. Click on the server you want to browse. <br>
-        <a href="{{url_for('static',filename='img/browserlogin.png')}}">
-            <img src="{{url_for('static',filename='img/browserlogin.png')}}" class="img-fluid rounded mx-auto d-block" alt=""></a>
+        <a href="docs/browserlogin.png">
+            <img src="docs/browserlogin.png" class="img-fluid rounded mx-auto d-block" alt=""></a>
     </li>
     <li>Done! Go crazy.</li>
 </ol>
@@ -159,8 +159,8 @@ Following the steps above would also work on your phone, since you're essentiall
     <li>Open the app and tap <code>Next</code></li>
     <li>Enter your <code>Username/Email</code> and <code>Password</code> and click <code>Sign In</code>.</li>
     <li>You should be a screen like this one. Click on the server you want to browse. <br>
-        <a href="{{url_for('static',filename='img/phonelogin.jpg')}}">
-        <img src="{{url_for('static',filename='img/phonelogin.jpg')}}" class="img-fluid rounded mx-auto d-block" alt=""></a>
+        <a href="docs/phonelogin.jpg">
+        <img src="docs/phonelogin.jpg" class="img-fluid rounded mx-auto d-block" alt=""></a>
     </li>
     <li>Done! Go crazy.</li>
 </ol>
@@ -181,8 +181,8 @@ I recommend going to [tv.emby.media](https://tv.emby.media) and skipping to Step
             <li><strong><u>On another device</u></strong>, go to <a href="https://emby.media/pin" target="_blank">emby.media/pin</a></li>
             <li>Enter your <code>Email/Username</code>, <code>Password</code>, and finally, the <code>PIN code</code> that is on your TV's screen</li>
         </ol>
-        <a href="{{url_for('static',filename='img/tvlogin.png')}}">
-        <img src="{{url_for('static',filename='img/tvlogin.png')}}" class="img-fluid rounded mx-auto d-block" alt=""></a>
+        <a href="docs/tvlogin.png">
+        <img src="docs/tvlogin.png" class="img-fluid rounded mx-auto d-block" alt=""></a>
     </li>
     <li>Done!</li>
 </ol>

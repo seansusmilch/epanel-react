@@ -16,6 +16,9 @@ import {LoginPage,UserProvider,LogoutPage} from './components/Auth'
 import axios from "axios"
 import { StatusProps } from './components/Props';
 
+import ReactNotification from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+
 const App: React.FC = () => {
 
     // const getStatus = async () => {
@@ -39,7 +42,7 @@ const App: React.FC = () => {
 
     return (
         <UserProvider>
-            
+            <ReactNotification />
             <BrowserRouter>
                 <Navigation/>
                 <div className="container" style={{ 

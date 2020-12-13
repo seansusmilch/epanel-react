@@ -3,6 +3,8 @@ import {Formik, Form, Field, ErrorMessage, useField} from 'formik'
 import {StatusProps} from '../../Props'
 import './status.css'
 
+import {store} from 'react-notifications-component'
+
 interface Props {
     set:{
 
@@ -42,14 +44,30 @@ export const StatusForm: React.FC<Props> = (props)=>{
                 enableReinitialize
 
                 onSubmit={(values, { setSubmitting }) => {
+                    setSubmitting(true)
                     setTimeout(() => {
                         props.set.submit(values)
-                        setSubmitting(false);
+                        setSubmitting(false)
+
+                        store.addNotification({
+                            title: "Pogu Champuuuu",
+                            message: "Status messages have been updated!",
+                            type: "success",
+                            insert: "top",
+                            container: "top-right",
+                            animationIn: ["animate__animated", "animate__fadeIn"],
+                            animationOut: ["animate__animated", "animate__fadeOut"],
+                            dismiss: {
+                              duration: 5000,
+                              onScreen: true
+                            }
+                          })
+
                     }, 400);
                 }}            
         >
                 
-                {( isSubmitting:boolean ) => (
+                {( formik:any ) => (
                     <Form>
                         <div className='card bg-dark'>
 
@@ -167,8 +185,8 @@ export const StatusForm: React.FC<Props> = (props)=>{
                                     </div>
                                 </div>
                                 <br/>
-                                <button type="submit" className='btn btn-primary' disabled={!isSubmitting}>
-                                    Submit
+                                <button type="submit" className='btn btn-primary btn-block btn-lg' disabled={formik.isSubmitting}>
+                                    Save
                                 </button>
                             </div>
                         </div>

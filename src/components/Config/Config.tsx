@@ -66,6 +66,7 @@ export const Config: React.FC<Props> = (props) => {
         user?.isAdmin ?
         <div>
             <h1>Config Page</h1>
+            <br/>
             {status?
                 <Status
                     status= {status}

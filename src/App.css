@@ -62,3 +62,10 @@ p{
     background-color: var(--formBgColorDisabled)!important;
     opacity: 0.5!important;
 }
+
+@media(max-width: 767px){
+    p{
+        font-size: 10px;
+        line-height: 1rem;
+    }
+}
