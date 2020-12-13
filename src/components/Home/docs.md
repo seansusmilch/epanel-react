@@ -76,14 +76,11 @@ Yeah
 
 ## Can I request media? [#](#can-i-request-media)
 
-{% if current_user.is_authenticated %}
 Media requests are handled by Ombi. Once you're at the login page, simply
 use the following login information.
 
 Username: `guest`  
 Password: `guest password`
-
-{%else%}Yeah{%endif%}
 
 <a id='why-isnt-my-request-being-fulfilled' class='anchor'></a>
 
