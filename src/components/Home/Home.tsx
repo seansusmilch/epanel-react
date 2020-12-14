@@ -7,7 +7,6 @@ import {ToTop} from './ToTop'
 
 import {StatusProps} from '../Props'
 // import {backend} from '../../base'
-import {getStatus} from '../../base'
 import axios from 'axios'
 
 import marked from 'marked'
@@ -32,21 +31,17 @@ export const Home: React.FC<Props> = (props:Props)=>{
             .then((text: string)=>{
                 setMd(text)
             })
-    },[])
 
-    useEffect(() =>{
-        // const fetchStatus = async()=>{
-        //     const res = await axios(`${backend}/config/status`)
-        //     setStatus(res.data)
-        // }
-        // fetchStatus()
-        const fetch = async()=>{
-            // console.log('fetched status!')
-            setStatus(await props.getStatus())
+
+        const getIt = async()=>{
+            const s = await props.getStatus()
+            setStatus(s)
+            // console.log(s)
+            console.log('fetched status!')
         }
-        fetch()
+        getIt()
 
-        let autoUpdate = setInterval(fetch, 30000)
+        let autoUpdate = setInterval(getIt, 30000)
 
         return ()=>{
             // console.log('Cleared!!!!')
@@ -65,6 +60,7 @@ export const Home: React.FC<Props> = (props:Props)=>{
                     announcement={status ? status.current.announcement : ''}
                     statusColor={status ? status.current.status_col : ''}
                     statusText={status ? status.current.status_msg : ''}
+                    lastUpdated={status ? status.lastUpdated : null}
                 />
                 {/* Links compoonnntt */}
                 <QLinks

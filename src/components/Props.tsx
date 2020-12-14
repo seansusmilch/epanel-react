@@ -11,6 +11,10 @@ export interface StatusProps {
         status_col: string
         status_msg: string
     }
+    lastUpdated: {
+        auto: boolean
+        time: number
+    }
 }
 
 export interface NewStatus {

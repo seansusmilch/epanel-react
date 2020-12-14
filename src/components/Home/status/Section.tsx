@@ -7,13 +7,19 @@ interface Props {
     statusColor: string,
     announcement: string,
     statusText: string,
+    lastUpdated: {
+        auto: boolean
+        time: number
+    } | null
 }
 
 export const StatusSection: React.FC<Props> = (props)=>{
+
+    console.log(props.lastUpdated)
     return(
     <div className="status-section container">
         <ServerStatus statusText={props.statusText} statusColor={props.statusColor} 
-            lastUpdated={{auto:true,date:Date.parse('14 December, 2020, 10:10:00 UTC')}}
+            lastUpdated={props.lastUpdated}
         />
         <Announcement announcement={props.announcement} />
     </div>

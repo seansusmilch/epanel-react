@@ -6,8 +6,8 @@ interface Props {
     statusColor: string,
     lastUpdated: {
         auto: boolean,
-        date: number
-    }
+        time: number
+    } | null
 }
 
 export const ServerStatus: React.FC<Props> = (props)=>{
@@ -17,8 +17,8 @@ export const ServerStatus: React.FC<Props> = (props)=>{
     //     'block' : 'none'
     //     )
     const [opacityTimestamp, setOpacityTimestamp] = useState(
-        ((Date.now() - props.lastUpdated.date) / 1000) / 60 > 1?
-        '0' : '0'
+        props.lastUpdated && ((Date.now() - props.lastUpdated.time) / 1000) / 60 > 1 ?
+        '1' : '1'
         )
     const [timestamp, setTimestamp] = useState('')
 
@@ -41,29 +41,32 @@ export const ServerStatus: React.FC<Props> = (props)=>{
         }
         interval = seconds / 3600;
         if (interval > 1) {
-          return Math.floor(interval) + " hrs.";
+          return Math.floor(interval) + " hours";
         }
         interval = seconds / 60;
         if (interval > 1) {
-          return Math.floor(interval) + " min.";
+          return Math.floor(interval) + " minutes";
         }
-        return Math.floor(seconds) + " sec.";
+        return Math.floor(seconds) + " seconds";
     }
 
     useEffect(()=>{
-        console.log(timeSince(props.lastUpdated.date))
-        let timestamp = ''
-        if(isMobile){
-            timestamp += props.lastUpdated.auto ? 'Auto - ' : 'Manual - '
-            timestamp += timeSince(props.lastUpdated.date) + ' ago'
-        }else{
-            timestamp += 'Last updated '
-            timestamp += props.lastUpdated.auto ? 'automatically ' : 'manually '
-            timestamp += timeSince(props.lastUpdated.date) + ' ago'
-        }
+        // console.log(timeSince(props.lastUpdated.date))
+        if(props.lastUpdated){
+            
+            let timestamp = ''
+            if(isMobile){
+                timestamp += props.lastUpdated.auto ? 'Auto - ' : 'Manual - '
+                timestamp += timeSince(props.lastUpdated.time) + ' ago'
+            }else{
+                timestamp += 'Last updated '
+                timestamp += props.lastUpdated.auto ? 'automatically ' : 'manually '
+                timestamp += timeSince(props.lastUpdated.time) + ' ago'
+            }
         
-
-        setTimestamp(timestamp)
+            
+            setTimestamp(timestamp)
+        }
     },[props.lastUpdated])
 
     const onClick = ()=>{

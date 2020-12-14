@@ -25,6 +25,11 @@ export const setStatus = async(newStatus:StatusProps)=>{
     console.log('Submitting status:', newStatus)
     let coll = firestore.collection('config')
 
+    if(!newStatus.auto.enabled){
+        newStatus.lastUpdated.auto = false
+        newStatus.lastUpdated.time = Date.now()
+    }
+
     coll.doc('status').set(newStatus)
 }
 
@@ -32,8 +37,14 @@ export const getUser = async(uid:string)=>{
     let coll = firestore.collection('users')
     console.log('Getting data for uid:', uid)
 
-    let userdoc = await coll.doc(uid).get()
-    let userdata = userdoc.data()
+    let userdoc = coll.doc(uid)
+    let userdata = (await userdoc.get()).data()
+    if(!userdata){
+        userdata = {
+            isAdmin: false
+        }
+        userdoc.set(userdata)
+    }
     
     return userdata
 }
