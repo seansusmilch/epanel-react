@@ -72,12 +72,15 @@ export const Home: React.FC<Props> = (props:Props)=>{
                 />
             </section>
             {/* markdonw */}
-            {user != null ? <div><ReactMarkdown source={md} allowDangerousHtml={true} /></div>
-            :
-            <div className='text-center'>
-                <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
-            </div>
-            }
+            <section>
+                {user != null ? <div><ReactMarkdown source={md} allowDangerousHtml={true} /></div>
+                :
+                <div className='text-center'>
+                    <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
+                </div>
+                }
+            </section>
+            
 
             <br/><br/><br/><br/><br/>
         </div>

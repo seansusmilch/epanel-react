@@ -17,7 +17,7 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
             <div className="d-flex justify-content-center flex-lg-nowrap">
 
                 <div className="p-2">
-                    <a href="https://app.emby.media">
+                    <a href="http://app.emby.media/#!/home">
                         <img src={'./logos/emby-icon.png'} className="qlink" alt=""/>
                     </a>
                 </div>

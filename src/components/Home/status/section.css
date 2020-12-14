@@ -1,5 +1,6 @@
 .status-section{
     /* min-height: calc(100vh - 50px); */
+    height: calc(100vh - 59px);
     /* position: relative; */
     text-align: center;
     /* font-size: 2rem; */
@@ -40,7 +41,7 @@
 }
 
 .status{
-    font-size: 2rem;
+    font-size: calc(1.5rem + 3.3vw);
 
     position: absolute;
     text-align: center;
@@ -54,17 +55,16 @@
 
 @media(max-width: 767px){
     .announcement-full{
-        top: calc(23vh + 160px)!important;
+        top: calc(26vh + 160px)!important;
     }
 }
 
-@media(max-height: 580px){
+@media(min-width: 1200px){
     .status{
-        font-size:1.5rem;
-        border: 1px solid red;
+        font-size:4rem;
     }
-
-    .announcement-full{
-        font-size:.8rem!important;
+    
+    h5{
+        font-size: 2rem!important;
     }
 }

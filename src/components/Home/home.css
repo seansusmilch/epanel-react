@@ -20,11 +20,6 @@ li {
     line-height: 2rem;
 }
 
-section {
-    height: calc(100vh - 59px);
-    /* border: 1px solid red; */
-}
-
 img {
     max-height: 50vh;
 }

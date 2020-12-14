@@ -52,3 +52,13 @@
         top: calc(74% + 3rem);
     }
 }
+
+@media(min-width: 1200px){
+    #status{
+        font-size:4rem!important;
+    }
+
+    h5{
+        font-size: 2rem!important;
+    }
+}

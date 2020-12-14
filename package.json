@@ -28,7 +28,8 @@
     "react-markdown": "^5.0.3",
     "react-notifications-component": "^3.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
+    "sass": "^1.30.0",
     "typescript": "^3.7.5"
   },
   "scripts": {
