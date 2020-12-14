@@ -43,9 +43,27 @@
 .status{
     font-size: calc(1.5rem + 3.3vw);
 
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
+    /* left: 50%; */
+    /* top: calc(23vh);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+
+.status-timestamp{
+    /* position: absolute;
+    top: calc(23vh + 18px);
+    transform: translate(-50%, -50%); */
+    color: gray;
+    padding: 4px;
+    float: right;
+}
+
+.status-parent{
+    position: absolute;
     left: 50%;
+
     top: calc(23vh);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
