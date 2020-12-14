@@ -54,7 +54,7 @@ If your question is not here or wasn't answered, feel free to get ahold of me.
         </a>
     </li>
     <li>Done!</li>
-    <li>Now you're able to move to steps for <a href="#logging-in">logging in</a></li>
+    <li>Now you're able to move to steps for <a href="#how-do-i-log-in">logging in</a></li>
 </ol>
 
 <a id='i-forgot-my-password' class='anchor'></a>

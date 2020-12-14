@@ -30,3 +30,5 @@ firestore.rules
 firestore.indexes.json
 
 functions/
+
+.local
