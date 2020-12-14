@@ -16,9 +16,9 @@ export const ServerStatus: React.FC<Props> = (props)=>{
     //     ((Date.now() - props.lastUpdated.date) / 1000) / 60 > 1?
     //     'block' : 'none'
     //     )
-    const [displayTimestamp, setDisplayTimestamp] = useState(
+    const [opacityTimestamp, setOpacityTimestamp] = useState(
         ((Date.now() - props.lastUpdated.date) / 1000) / 60 > 1?
-        'none' : 'none'
+        '0' : '0'
         )
     const [timestamp, setTimestamp] = useState('')
 
@@ -67,10 +67,10 @@ export const ServerStatus: React.FC<Props> = (props)=>{
     },[props.lastUpdated])
 
     const onClick = ()=>{
-        if(displayTimestamp==='none')
-            setDisplayTimestamp('block')
+        if(opacityTimestamp==='0')
+            setOpacityTimestamp('100%')
         else 
-            setDisplayTimestamp('none')
+            setOpacityTimestamp('0')
     }
     
     return(
@@ -85,7 +85,7 @@ export const ServerStatus: React.FC<Props> = (props)=>{
     </div>
     <small 
         className='status-timestamp'
-        style={{display:displayTimestamp}}
+        style={{opacity:opacityTimestamp}}
         >{timestamp}</small>
     </div>
     )
