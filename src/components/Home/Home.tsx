@@ -3,6 +3,7 @@ import './home.css'
 import {StatusSection} from './status/Section'
 import {QLinks} from './qlinks/QLinks'
 import {UserContext} from '../Auth'
+import {ToTop} from './ToTop'
 
 import {StatusProps} from '../Props'
 // import {backend} from '../../base'
@@ -71,6 +72,8 @@ export const Home: React.FC<Props> = (props:Props)=>{
                     isAdmin={user ? user.isAdmin: false}
                 />
             </section>
+
+            <ToTop/>
             {/* markdonw */}
             <section>
                 {user != null ? <div><ReactMarkdown source={md} allowDangerousHtml={true} /></div>

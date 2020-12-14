@@ -23,3 +23,20 @@ li {
 img {
     max-height: 50vh;
 }
+
+#totop{
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    z-index: 2;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: var(--borderRadius);
+}
+
+#totop img{
+    height:30px;
+    width: 30px;
+    margin: 0;
+}
