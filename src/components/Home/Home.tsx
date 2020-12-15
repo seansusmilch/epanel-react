@@ -37,7 +37,7 @@ export const Home: React.FC<Props> = (props:Props)=>{
             const s = await props.getStatus()
             setStatus(s)
             // console.log(s)
-            console.log('fetched status!')
+            // console.log('fetched status!')
         }
         getIt()
 
