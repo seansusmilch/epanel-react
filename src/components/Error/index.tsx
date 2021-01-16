@@ -1,7 +1,7 @@
 import React from 'react'
 import './err.css'
 
-export const Error = ()=>{
+export const NotFoundError = ()=>{
     return(
         <div className='m4'>
             <br/><br/>

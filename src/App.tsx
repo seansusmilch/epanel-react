@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import "./App.css"
+import "./App.sass"
 
-import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
 
 
 import { Navigation } from './components/Navigation'
 import { Home } from './components/Home/Home'
 import Config from './components/Config'
-import { Error } from './components/Error'
+import { NotFoundError } from './components/Error'
+import {InvitePage} from './components/Invite'
 
 
 import {signInWithGoogle, getStatus, setStatus} from './base'
@@ -18,34 +19,17 @@ import { StatusProps } from './components/Props';
 
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
+import { ToTop } from './components/Common/ToTop'
+import { Ombi } from './components/Ombi';
 
 const App: React.FC = () => {
-
-    // const getStatus = async () => {
-    //     const res = await axios(`${backend}/config/status`)
-    //     console.log('status : ', res.data)
-
-    //     return res.data as StatusProps
-    // }
-
-    // const getConfig = async()=>{
-    //     console.log('getConfig NOT IMPLEMENTED YET')
-    //     return
-    // }
-
-    useEffect(()=>{
-        
-        //update status
-
-        //set interval update status
-    },[])
 
     return (
         <UserProvider>
             <ReactNotification />
             <BrowserRouter>
                 <Navigation/>
-                <div className="container" style={{ 
+                <div className="container-fluid" style={{ 
                     marginTop: '59px'
                 }}>
                     <Switch>
@@ -63,13 +47,21 @@ const App: React.FC = () => {
                                     // getConfig={getConfig}
                                 />}
                             />
+                        <Route path="/invite" component={InvitePage}/>
                             
                         <Route path='/logout' component={LogoutPage}/>
                         <Route path="/login" component={()=><LoginPage signInWithGoogle={signInWithGoogle}/>} />
+
+                        <Route path="/ombi" render={()=><Ombi/>}/>
+                        {/* <Route path="/ombi" render={()=>{window.location.href = 'https://gaming.minecraftsexy.website/ombi'
+                            return(<p>Redirecting you to Ombi</p>)
+                            }}/> */}
                         
-                        <Route component={Error}/>
+                        
+                        <Route component={NotFoundError}/>
                     </Switch>
                 </div>
+                <ToTop/>
             </BrowserRouter>
         </UserProvider>
     );
