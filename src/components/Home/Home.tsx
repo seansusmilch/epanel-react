@@ -1,45 +1,50 @@
 import React, {useContext, useEffect, useState} from 'react'
-import './home.css'
+import './home.sass'
 import {StatusSection} from './status/Section'
 import {QLinks} from './qlinks/QLinks'
 import {UserContext} from '../Auth'
-import {ToTop} from './ToTop'
+// import {ToTop} from './ToTop'
 
 import {StatusProps} from '../Props'
 // import {backend} from '../../base'
-import axios from 'axios'
-
-import marked from 'marked'
-import ReactMarkdown from 'react-markdown'
+import Div100vh from 'react-div-100vh'
+import { isMobile } from 'react-device-detect'
+import { HomeDoc } from './HomeDoc'
 
 interface Props {
     getStatus: ()=>Promise<StatusProps>
 }
 
-export const Home: React.FC<Props> = (props:Props)=>{
+export const Home:React.FC<Props> = (props)=>{
     const [md, setMd] = useState<string>('')
-
     const [status,setStatus] = useState<StatusProps>()
 
+    const [isLoaded, setLoaded] = useState(false)
+    const user = useContext(UserContext)
+
     useEffect(() =>{
-        const mdPath = require('./docs.md')
+        // const mdPath = require('./docs.md')
 
-        fetch(mdPath)
-            .then((res: any) =>{
-                return res.text()
-            })
-            .then((text: string)=>{
-                setMd(text)
-            })
-
+        // fetch(mdPath)
+        //     .then((res: any) =>{
+        //         return res.text()
+        //     })
+        //     .then((text: string)=>{
+        //         setMd(text)
+        //     })
 
         const getIt = async()=>{
             const s = await props.getStatus()
             setStatus(s)
-            // console.log(s)
-            // console.log('fetched status!')
         }
-        getIt()
+
+        const statusPromise = new Promise<void>(async(resolve)=>{
+            await getIt()
+            resolve()
+        })
+
+        statusPromise.then(()=>{setLoaded(true)})
+
 
         let autoUpdate = setInterval(getIt, 30000)
 
@@ -49,30 +54,44 @@ export const Home: React.FC<Props> = (props:Props)=>{
         }
     },[])
 
-
-    const user = useContext(UserContext)
     // console.log('user', user? user : 'null')
 
-    return (
+    return (isLoaded?
+        
         <div>
-            <section>
+            {/* <section className='d-flex flex-column justify-content-around text-center fullscreen-section'>
                 <StatusSection
                     announcement={status ? status.current.announcement : ''}
                     statusColor={status ? status.current.status_col : ''}
                     statusText={status ? status.current.status_msg : ''}
                     lastUpdated={status ? status.lastUpdated : null}
                 />
-                {/* Links compoonnntt */}
                 <QLinks
                     isLoggedIn={user ? true:false}
                     isAdmin={user ? user.isAdmin: false}
                 />
-            </section>
+            </section> */}
 
-            <ToTop/>
+            <Div100vh className='text-center fullscreen-section'>
+                <div className={'d-flex flex-column justify-content-around ' + (isMobile? 'mobile-cut' : 'h-100')}>
+                    <StatusSection
+                        announcement={status ? status.current.announcement : ''}
+                        statusColor={status ? status.current.status_col : ''}
+                        statusText={status ? status.current.status_msg : ''}
+                        lastUpdated={status ? status.lastUpdated : null}
+                    />
+                    <QLinks
+                        isLoggedIn={user ? true:false}
+                        isAdmin={user ? user.isAdmin: false}
+                    />
+                </div>
+            </Div100vh>
+
+            
             {/* markdonw */}
-            <section>
-                {user != null ? <div><ReactMarkdown source={md} allowDangerousHtml={true} /></div>
+            <section className='container p-0'>
+                {user != null ? 
+                <HomeDoc/>
                 :
                 <div className='text-center'>
                     <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
@@ -83,5 +102,6 @@ export const Home: React.FC<Props> = (props:Props)=>{
 
             <br/><br/><br/><br/><br/>
         </div>
-    )
+        :
+        <p>Loading...</p>)
 }

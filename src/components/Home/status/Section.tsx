@@ -1,7 +1,8 @@
 import React from 'react';
 import { Announcement } from './Announcement';
 import { ServerStatus } from './ServerStatus';
-import "./section.css"
+// import "./section.css"
+import { Server } from 'http';
 
 interface Props {
     statusColor: string,
@@ -17,12 +18,19 @@ export const StatusSection: React.FC<Props> = (props)=>{
 
     // console.log(props.lastUpdated)
     return(
-    <div className="status-section container">
+    // <div className="status-section">
+    //     <ServerStatus statusText={props.statusText} statusColor={props.statusColor} 
+    //         lastUpdated={props.lastUpdated}
+    //     />
+    //     <Announcement announcement={props.announcement} />
+    // </div>
+
+    <>
         <ServerStatus statusText={props.statusText} statusColor={props.statusColor} 
             lastUpdated={props.lastUpdated}
         />
         <Announcement announcement={props.announcement} />
-    </div>
+    </>
     )
     
 }

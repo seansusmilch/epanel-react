@@ -1,0 +1,35 @@
+@mixin transform($transforms) 
+    -webkit-transform: $transforms
+    -moz-transform: $transforms
+    -ms-transform: $transforms
+    transform: $transforms
+
+
+
+@mixin inline-animation($duration)
+    $name: inline-#{unique-id()}
+
+    @keyframes #{$name} 
+        @content
+
+    animation-name: $name
+    animation-duration: $duration
+
+#totop
+
+    position: fixed
+    bottom: 1rem
+    right: 2rem
+    z-index: 2
+    border: none
+    outline: none
+    cursor: pointer
+    border-radius: var(--borderRadius)
+
+    @include inline-animation(.3s)
+        0%
+            @include transform(translateY(100px))
+            opacity: 0
+
+        100%
+            opacity: 1

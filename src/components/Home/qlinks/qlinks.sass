@@ -1,0 +1,77 @@
+#qlink-drop.dropdown-item
+    width: 17vw !important
+    padding: .5rem !important
+
+
+.dropdown-toggle::after
+    display: none !important
+
+
+.dropdown-item:hover
+    background-color: #171717 !important
+
+#qlink-drop
+    /* max-width: 17vw !important */
+    min-width: 0 !important
+    border-radius: var(--borderRadius)
+    // background-color: black
+
+
+.btn:focus
+    outline: none !important
+    box-shadow: none !important
+
+
+#qlinks
+    // display: inline-block
+    // position: absolute
+    // border-radius: var(--borderRadius)
+
+    // bottom: 0
+    // left: 50%
+    // -ms-transform: translate(-50%, -100%)
+    // transform: translate(-50%, -100%)
+
+#qlinks-title
+    font-size: calc(1rem + 1.2vh)
+    font-weight: 500
+
+.qlink
+    max-height: 10vh
+    max-width: 17vw
+
+
+
+@media(max-width:767px)
+    #qlinks
+        bottom: -60px
+    
+  
+
+@mixin transform($transforms) 
+    -webkit-transform: $transforms
+    -moz-transform: $transforms
+    -ms-transform: $transforms
+    transform: $transforms
+
+
+
+@mixin inline-animation($duration)
+    $name: inline-#{unique-id()}
+
+    @keyframes #{$name} 
+        @content
+
+    animation-name: $name
+    animation-duration: $duration
+
+.slideIn 
+    @include inline-animation(0.2s)
+        0%
+            // transform: translateY(1rem)
+            @include transform(translateY(-400px))
+            opacity: 0
+
+        100%
+            // transform:translateY(0rem)
+            opacity: 1

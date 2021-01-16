@@ -1,0 +1,22 @@
+.anchor::before 
+    /* z-index:  */
+    display: block
+    margin-top: -59px
+    height: 59px
+    content: ""
+
+
+body 
+    scroll-behavior: smooth
+    margin-bottom: 200px
+
+img 
+    max-height: 50vh
+
+.anchor-link
+    opacity: 0
+
+h1,h2,h3,h4,h5
+    &:hover
+        .anchor-link
+            opacity: 1
