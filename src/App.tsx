@@ -14,7 +14,6 @@ import {InvitePage} from './components/Invite'
 import {signInWithGoogle, getStatus, setStatus} from './base'
 import {LoginPage,UserProvider,LogoutPage} from './components/Auth'
 
-import axios from "axios"
 import { StatusProps } from './components/Props';
 
 import ReactNotification from 'react-notifications-component'
