@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
 import {Status, defaultStatus} from './Status/Status'
 import {StatusProps, NewStatus} from '../Props'
-import axios from 'axios'
-// import {backend} from '../../base'
 import {UserContext,idToken} from '../Auth'
 import { Redirect } from "react-router-dom"
+import { DocSection } from "./Docs/DocsSection"
 
 
 interface Props{
@@ -65,8 +64,10 @@ export const Config: React.FC<Props> = (props) => {
     return (
         user?.isAdmin ?
         <div>
-            <h1>Config Page</h1>
             <br/>
+            <div className='jumbotron bg-dark p-3 text-center'>
+                <h1>Config Page</h1>
+            </div>
             {status?
                 <Status
                     status= {status}
@@ -75,6 +76,7 @@ export const Config: React.FC<Props> = (props) => {
                 :
                 ''
             }
+            <DocSection/>
         </div>
         :
         <div>

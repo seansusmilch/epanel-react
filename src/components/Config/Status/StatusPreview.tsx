@@ -26,7 +26,7 @@ export const StatusPreview: React.FC<Props> = (props:Props)=>{
 
             <div id="status">
                 Status: 
-                <div id="status-text" style={{ 
+                <div id="status-text" className='rounded' style={{ 
                     backgroundColor: props.color
                 }}>
                     {props.message}
@@ -34,7 +34,7 @@ export const StatusPreview: React.FC<Props> = (props:Props)=>{
             </div>
             <div id='announcement'>
                 <p className='ml-auto mr-auto'>Announcement</p>
-                <p id='announcement-text' className='bg-dark p-2'>{props.announcement}</p>
+                <p id='announcement-text' className='bg-dark p-2 rounded'>{props.announcement}</p>
             </div>
         </div>
     )
