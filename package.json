@@ -13,10 +13,11 @@
     "@types/node-cron": "^2.0.3",
     "@types/react": "^16.9.52",
     "@types/react-dom": "^16.9.8",
+    "@types/react-modal": "^3.10.6",
     "@types/react-notifications-component": "^2.4.0",
     "@types/react-router-dom": "^5.1.6",
     "@types/react-scroll": "^1.8.2",
-    "axios": "^0.21.0",
+    "@uiw/react-md-editor": "^2.1.1",
     "dotenv": "^8.2.0",
     "firebase": "^8.0.0",
     "firebase-admin": "^9.3.0",
@@ -24,21 +25,27 @@
     "marked": "^1.2.2",
     "node-cron": "^2.0.3",
     "react": "^16.14.0",
+    "react-bootstrap-icons": "^1.2.2",
+    "react-content-loader": "^5.1.4",
     "react-device-detect": "^1.14.0",
+    "react-div-100vh": "^0.5.6",
     "react-dom": "^16.14.0",
+    "react-iframe": "^1.8.0",
     "react-markdown": "^5.0.3",
+    "react-modal": "^3.12.1",
     "react-notifications-component": "^3.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
     "react-scroll": "^1.8.1",
     "sass": "^1.30.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "npm run build && firebase deploy --only hosting",
+    "deploypreview": "npm run build && firebase hosting:channel:deploy poggers"
   },
   "browserslist": {
     "production": [

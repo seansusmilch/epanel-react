@@ -30,5 +30,10 @@ firestore.rules
 firestore.indexes.json
 
 functions/
+functions_old/
 
 .local
+
+bak
+old
+test.md
