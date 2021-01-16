@@ -1,7 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react'
 import {auth, getUser} from '../../base'
-import axios from 'axios'
-import firebase from 'firebase'
 
 export const UserContext = createContext(auth.currentUser as any)
 
@@ -14,6 +12,7 @@ export let idToken = ''
 
 export const UserProvider: React.FC = (props)=>{
     const [user, setUser] = useState<any>()
+    const [loaded, setLoaded] = useState(false)
 
     // console.log('backend',backend)
 
@@ -53,7 +52,9 @@ export const UserProvider: React.FC = (props)=>{
             // console.log(usr.uid)
 
             if(!usr){
+                console.log('No user')
                 setUser(null)
+                setLoaded(true)
                 // localStorage.removeItem('user')
                 return
             }
@@ -68,7 +69,7 @@ export const UserProvider: React.FC = (props)=>{
 
             // console.log('You must have logged out')
             setUser(usr)
-
+            setLoaded(true)
             // localStorage.setItem('user', JSON.stringify(usr))
         })
     },[])
@@ -79,9 +80,15 @@ export const UserProvider: React.FC = (props)=>{
     //     console.log(auth.currentUser)
     // }
 
-    return (
-        <UserContext.Provider value={user}>
-            {props.children}
-        </UserContext.Provider>
-    )
+    return (<>
+        {loaded?
+
+            <UserContext.Provider value={user}>
+                {props.children}
+            </UserContext.Provider>
+            :
+            ''
+        }
+        
+    </>)
 }
