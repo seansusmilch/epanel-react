@@ -1,0 +1,34 @@
+$borderRadius: 10px
+
+.iuse-name
+    font-size: large
+
+
+summary
+    padding-left: 10px
+    outline: none
+    border-radius: $borderRadius
+
+
+summary:focus
+    outline: none
+
+
+.bdge
+    border-radius: 3px
+    // transform: translateY(3px)
+
+
+.delete-button
+    height: 25px
+
+
+
+details[open]
+    .details-open
+        opacity: .8
+        border-radius: 0 0 $borderRadius $borderRadius
+    
+    summary
+        border-radius: $borderRadius $borderRadius 0 0
+    
