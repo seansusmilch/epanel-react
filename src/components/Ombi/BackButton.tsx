@@ -7,9 +7,12 @@ export const BackButton:React.FC = ()=>{
     return(<>
         <NavLink to="/" className='backButton nav-link m3 bg-dark border-primary border-left rounded-right'
                 style={isMobile?
-                    {top:'40px'}
+                    {
+                        top:'0px',
+                        right:'100px'
+                    }
                     :
-                    {}
+                    {left:0}
                 }
                 >
             Home
