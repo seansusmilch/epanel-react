@@ -20,6 +20,7 @@ import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import { ToTop } from './components/Common/ToTop'
 import { Ombi } from './components/Ombi';
+import { RutorrentLogin } from './components/Rutorrent';
 
 const App: React.FC = () => {
 
@@ -55,7 +56,7 @@ const App: React.FC = () => {
                         {/* <Route path="/ombi" render={()=>{window.location.href = 'https://gaming.minecraftsexy.website/ombi'
                             return(<p>Redirecting you to Ombi</p>)
                             }}/> */}
-                        
+                        <Route path='/rutorrent' component={RutorrentLogin}/>
                         
                         <Route component={NotFoundError}/>
                     </Switch>
