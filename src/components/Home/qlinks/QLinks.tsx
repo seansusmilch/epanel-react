@@ -1,5 +1,6 @@
 import React from 'react'
 import { isMobile } from 'react-device-detect'
+import { NavLink } from 'react-router-dom'
 import './qlinks.sass'
 
 interface Props {
@@ -36,9 +37,12 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                                 <img src={'./logos/rutorrent-icon.webp'} className="qlink" alt=""/>
                             </button>
                             <div className="dropdown-menu bg-dark slideIn rounded" id="qlink-drop">
-                                <a href="/rutorrent" className="dropdown-item p-2">
+                                {/* <a href="/rutorrent" className="dropdown-item p-2">
                                     <img src={'./logos/rutorrent-icon.webp'} className="qlink" alt=""/>
-                                </a>
+                                </a> */}
+                                <NavLink to='/rutorrent' className="dropdown-item p-2">
+                                    <img src={'./logos/rutorrent-icon.webp'} className="qlink" alt=""/>
+                                </NavLink>
                                 <a href="https://gaming.minecraftsexy.website/jackett" className="dropdown-item p-2">
                                     <img src={'./logos/jackett-icon.webp'} className="qlink" alt=""/>
                                 </a>
