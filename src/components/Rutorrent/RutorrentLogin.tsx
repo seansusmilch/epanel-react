@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 // import './RutorrentLogin.css'
 
  import { Field, Form, Formik, FormikProps } from 'formik';
@@ -7,6 +7,11 @@ import { Redirect } from 'react-router-dom';
  
  export const RutorrentLogin = () => {
     const user = useContext(UserContext)
+
+    const [rtUsername, setRtUsername] = useState('')
+    const [rtPassword, setRtPassword] = useState('')
+    const [rtRedirect, setRtRedirect] = useState(false)
+    console.log('RutorrentLogin component is deprecated')
     return (
         user?.isAdmin ?
 //     <div className="wrapper fadeInDown">
@@ -62,7 +67,7 @@ import { Redirect } from 'react-router-dom';
                 //    actions.setSubmitting(false);
                 //  }, 1000)'
                 
-                document.location.assign(`https://${values.username}:${values.password}@rt.minecraftsexy.website/`)
+                window.location.href = `https://${values.username}:${values.password}@rt.minecraftsexy.website/`
             }}
             >
             {(props: FormikProps<any>) => (
@@ -77,13 +82,18 @@ import { Redirect } from 'react-router-dom';
                         placeholder='password'
                         id='password'
                         className='form-control form-control-lg my-2'
-                />
+                    />
                 <button type="submit" className='btn btn-primary my-2 btn-block btn-lg'>Submit</button>
                 </Form>
             )}
             </Formik>
             </div>
         </div>
+        {/* {rtRedirect ?
+            <Redirect to={`https://${rtUsername}:${rtPassword}@rt.minecraftsexy.website/`}/>
+            :
+            ''
+        } */}
         
     </div>
    :

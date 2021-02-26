@@ -37,12 +37,9 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                                 <img src={'./logos/rutorrent-icon.webp'} className="qlink" alt=""/>
                             </button>
                             <div className="dropdown-menu bg-dark slideIn rounded" id="qlink-drop">
-                                {/* <a href="/rutorrent" className="dropdown-item p-2">
+                                <a href="https://rt.minecraftsexy.website" className="dropdown-item p-2">
                                     <img src={'./logos/rutorrent-icon.webp'} className="qlink" alt=""/>
-                                </a> */}
-                                <NavLink to='/rutorrent' className="dropdown-item p-2">
-                                    <img src={'./logos/rutorrent-icon.webp'} className="qlink" alt=""/>
-                                </NavLink>
+                                </a>
                                 <a href="https://gaming.minecraftsexy.website/jackett" className="dropdown-item p-2">
                                     <img src={'./logos/jackett-icon.webp'} className="qlink" alt=""/>
                                 </a>

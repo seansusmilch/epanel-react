@@ -14,13 +14,10 @@ import {InvitePage} from './components/Invite'
 import {signInWithGoogle, getStatus, setStatus} from './base'
 import {LoginPage,UserProvider,LogoutPage} from './components/Auth'
 
-import { StatusProps } from './components/Props';
-
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import { ToTop } from './components/Common/ToTop'
-import { Ombi } from './components/Ombi';
-import { RutorrentLogin } from './components/Rutorrent';
+import { Ombi } from './components/Ombi'
 
 const App: React.FC = () => {
 
@@ -56,7 +53,6 @@ const App: React.FC = () => {
                         {/* <Route path="/ombi" render={()=>{window.location.href = 'https://gaming.minecraftsexy.website/ombi'
                             return(<p>Redirecting you to Ombi</p>)
                             }}/> */}
-                        <Route path='/rutorrent' component={RutorrentLogin}/>
                         
                         <Route component={NotFoundError}/>
                     </Switch>
