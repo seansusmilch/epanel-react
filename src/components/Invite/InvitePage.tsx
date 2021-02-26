@@ -15,7 +15,7 @@ export const InvitePage:React.FC<Props> = (props) => {
         <br/>
         <div className='jumbotron bg-dark p-3 text-center'>
             {/* <h1>Invite Page</h1> */}
-            <div className='display-3'>Invite Page</div>
+            <div className='display-4'>Invite Page</div>
         </div>
 
         {/* <div className='d-flex justify-content-between flex-wrap'>

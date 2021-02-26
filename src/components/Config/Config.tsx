@@ -66,7 +66,7 @@ export const Config: React.FC<Props> = (props) => {
         <div>
             <br/>
             <div className='jumbotron bg-dark p-3 text-center'>
-                <h1>Config Page</h1>
+                <div className='display-4'>Config</div>
             </div>
             {status?
                 <Status
