@@ -1,5 +1,6 @@
-import React, { ReactComponentElement } from 'react'
-import { JsxElement } from 'typescript';
+// import React, { ReactComponentElement } from 'react'
+import React from 'react'
+// import { JsxElement } from 'typescript';
 
 const flatten = (text: string, child:React.ReactElement<any>, i:number, a:string[]):string => {
     let trash:any = i

@@ -1,8 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Formik, Form, Field} from 'formik'
-import {store} from 'react-notifications-component'
 import {randomString} from '../../Helper'
-import {createInvite} from '../../../base'
 
 interface Props{
     setModalOpen: (val:boolean)=>void

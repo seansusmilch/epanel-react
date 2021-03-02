@@ -19,7 +19,8 @@ export const UsedInvite:React.FC<Props> = (props)=>{
                     width={30} 
                     style={{
                         borderRadius: '100px'
-                    }} 
+                    }}
+                    alt={iuse.used_by.name} 
                     src={iuse.used_by.picture}
                 />
                 <div className='iuse-name align-self-center'>{iuse.used_by.name}</div>

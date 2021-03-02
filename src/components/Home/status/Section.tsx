@@ -2,7 +2,6 @@ import React from 'react';
 import { Announcement } from './Announcement';
 import { ServerStatus } from './ServerStatus';
 // import "./section.css"
-import { Server } from 'http';
 
 interface Props {
     statusColor: string,

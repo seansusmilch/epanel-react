@@ -1,6 +1,4 @@
 import React from 'react'
-import { isMobile } from 'react-device-detect'
-import { NavLink } from 'react-router-dom'
 import './qlinks.sass'
 
 interface Props {

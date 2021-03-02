@@ -1,3 +1,1 @@
-import {Ombi} from './Ombi'
-
-export {Ombi}
+export * from './Ombi'

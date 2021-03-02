@@ -17,10 +17,15 @@ export const HomeDoc:React.FC = (props)=>{
     },[])
 
     return(<>
+    {loaded ?
         <ReactMarkdown 
             source={md} 
             allowDangerousHtml={true} 
             renderers={{'heading':HeadingRenderer}}
             />
+        :
+        <p>Loading...</p>
+    }
+    
     </>)
 }

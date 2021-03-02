@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
-import {Status, defaultStatus} from './Status/Status'
+import {Status} from './Status/Status'
 import {StatusProps, NewStatus} from '../Props'
-import {UserContext,idToken} from '../Auth'
-import { Redirect } from "react-router-dom"
+import {UserContext} from '../Auth'
 import { DocSection } from "./Docs/DocsSection"
 
 
@@ -28,7 +27,7 @@ export const Config: React.FC<Props> = (props) => {
             setStateStatus(await props.getStatus())
         }
         fetchStatus()
-    },[])
+    },[props])
 
     const submitStatus = async(values:NewStatus)=>{
 

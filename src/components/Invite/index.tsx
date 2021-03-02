@@ -1,7 +1,5 @@
-import {InviteForm} from './InviteForm/InviteForm'
-import {OpenInvitesList} from './OpenInvitesList/OpenInvitesList'
-import {InvitePage} from './InvitePage'
-import {InviteInfo} from './InviteInfo'
-import {UsedInvitesList} from './UsedInvitesList/UsedInvitesList'
-
-export {InviteForm, OpenInvitesList, InvitePage, InviteInfo, UsedInvitesList}
+export * from './InviteForm/InviteForm'
+export * from './OpenInvitesList/OpenInvitesList'
+export * from './InvitePage'
+export * from './InviteInfo'
+export * from './UsedInvitesList/UsedInvitesList'

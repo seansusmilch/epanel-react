@@ -1,5 +1,4 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
 import {ArrowUpRight} from 'react-bootstrap-icons'
 import {isMobile} from 'react-device-detect'
 

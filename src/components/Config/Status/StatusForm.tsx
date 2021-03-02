@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import {Formik, Form, Field, ErrorMessage, useField} from 'formik'
-import {StatusProps} from '../../Props'
+import React from 'react'
+import {Formik, Form, Field} from 'formik'
 import './status.css'
 
 import {store} from 'react-notifications-component'

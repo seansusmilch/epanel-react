@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const Home:React.FC<Props> = (props)=>{
-    const [md, setMd] = useState<string>('')
+    // const [md, setMd] = useState<string>('')
     const [status,setStatus] = useState<StatusProps>()
 
     const [isLoaded, setLoaded] = useState(false)
@@ -52,7 +52,7 @@ export const Home:React.FC<Props> = (props)=>{
             // console.log('Cleared!!!!')
             clearInterval(autoUpdate)
         }
-    },[])
+    },[props])
 
     // console.log('user', user? user : 'null')
 

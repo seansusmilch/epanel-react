@@ -1,5 +1,5 @@
 import React from 'react'
-import {Formik, Form, Field, ErrorMessage, useField} from 'formik'
+import {Formik, Form, Field} from 'formik'
 import {funcUseInvite} from '../../../base'
 import {store} from "react-notifications-component"
 
@@ -15,14 +15,14 @@ interface FormVals{
 
 export const InviteForm:React.FC<Props> = (props) => {
 
-    const inv = async()=>{
-        const res = await funcUseInvite({
-            code: 'POGU',
-            username: 'dangle',
-            displayname: 'dangledickrick'
-        })
-        console.log(res.data)
-    }
+    // const inv = async()=>{
+    //     const res = await funcUseInvite({
+    //         code: 'POGU',
+    //         username: 'dangle',
+    //         displayname: 'dangledickrick'
+    //     })
+    //     console.log(res.data)
+    // }
 
     const handleSubmit = async(values:FormVals)=>{
 
@@ -119,6 +119,7 @@ export const InviteForm:React.FC<Props> = (props) => {
 
         if(result.err != {}){
             for(let [key,val] of Object.entries(result.err)){
+                key=key
                 store.addNotification({
                     title: '😭 Error',
                     message: val as string,

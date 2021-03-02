@@ -1,6 +1,4 @@
 import React from 'react'
-import {StatusProps} from '../../Props'
-
 interface Props{ 
     message: string
     color: string

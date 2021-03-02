@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react'
 import "./App.sass"
 
-import { BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
-import { Navigation } from './components/Navigation'
-import { Home } from './components/Home/Home'
-import Config from './components/Config'
-import { NotFoundError } from './components/Error'
+import { Navigation } from './components/Navigation/Navigation'
+import { Home } from './components/Home'
+import { Config } from './components/Config'
+import { NotFoundError } from './components/Error/Error'
 import {InvitePage} from './components/Invite'
 
 
@@ -16,7 +16,7 @@ import {LoginPage,UserProvider,LogoutPage} from './components/Auth'
 
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
-import { ToTop } from './components/Common/ToTop'
+import { ToTop } from './components/Common'
 import { Ombi } from './components/Ombi'
 
 const App: React.FC = () => {

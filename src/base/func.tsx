@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/functions'
-import {StatusProps,NewStatus, InviteUse, Invite} from '../components/Props'
+import {StatusProps, InviteUse, Invite} from '../components/Props'
 
 const fireConf = {
     apiKey: process.env.REACT_APP_FIRE_API_KEY,

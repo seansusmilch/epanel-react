@@ -1,7 +1,7 @@
 import React from 'react'
 import { Invite } from '../../Props'
 import {timeSince} from '../../Helper'
-import { Check, Exclamation, X } from 'react-bootstrap-icons'
+import { X } from 'react-bootstrap-icons'
 import {store} from 'react-notifications-component'
 
 interface Props{
