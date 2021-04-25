@@ -9,6 +9,7 @@ import {StatusProps} from 'components/Props'
 import Div100vh from 'react-div-100vh'
 import { isMobile } from 'react-device-detect'
 import { HomeDoc } from './HomeDoc'
+import { useLocation } from 'react-router-dom'
 
 interface Props {
     getStatus: ()=>Promise<StatusProps>
@@ -21,16 +22,27 @@ export const Home:React.FC<Props> = (props)=>{
     const [isLoaded, setLoaded] = useState(false)
     const user = useContext(UserContext)
 
-    useEffect(() =>{
-        // const mdPath = require('./docs.md')
+    const {pathname, hash} = useLocation()
 
-        // fetch(mdPath)
-        //     .then((res: any) =>{
-        //         return res.text()
-        //     })
-        //     .then((text: string)=>{
-        //         setMd(text)
-        //     })
+    useEffect(()=>{
+        console.log(hash)
+        if(hash!==''){
+            const scrll = setInterval(() => {
+                    const id = hash.replace('#', '')
+                    const element = document.getElementById(id)
+                    // console.log(element)
+                    if (element) {
+                        clearInterval(scrll)
+                        element.scrollIntoView({behavior: 'smooth'})
+                    }
+                },
+                100
+            )
+        }
+    }, [pathname])
+    
+
+    useEffect(() =>{
 
         const getIt = async()=>{
             const s = await props.getStatus()
