@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import {getHomeDoc, saveHomeDoc} from 'fbase'
 import MDEditor from '@uiw/react-md-editor'
-import { HeadingRenderer } from 'components/Md/Renderers'
+import { HeadingRenderer, ImageRenderer } from 'components/Md/Renderers'
 import './DocsSection.sass'
+import { store } from 'react-notifications-component'
 
 export const DocSection:React.FC = (props) => {
 
@@ -19,7 +20,21 @@ export const DocSection:React.FC = (props) => {
     },[])
 
     const handleSubmit = ()=>{
-        saveHomeDoc(md)
+        saveHomeDoc(md).then(()=>{
+            store.addNotification({
+                title: "Home Doc Saved",
+                message: "New home doc has been saved!",
+                type: "success",
+                insert: "top",
+                container: "top-right",
+                animationIn: ["animate__animated", "animate__fadeIn"],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                  duration: 5000,
+                  onScreen: true
+                }
+              })
+        })
     }
 
     return(<>
@@ -36,7 +51,8 @@ export const DocSection:React.FC = (props) => {
                     visiableDragbar={false}
                     previewOptions={{
                         renderers:{
-                            'heading':HeadingRenderer
+                            'heading':HeadingRenderer,
+                            'image': ImageRenderer
                         },
                         className:'bg-dark text-white'
                     }}
