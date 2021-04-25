@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
 // import {Formik, Form, Field, ErrorMessage} from 'formik'
-import {StatusProps} from '../../Props'
+import {StatusProps} from 'components/Props'
 import {StatusForm} from './StatusForm'
 import {StatusPreview} from './StatusPreview'
-import './status.css'
+import {StatusSection} from 'components/Home/status/Section'
+// import './status.css'
+import { Card, Col, Row } from 'react-bootstrap'
+
 interface Props {
     status: StatusProps
     handleSubmit: (values:any)=>Promise<any>
@@ -94,19 +97,36 @@ export const Status: React.FC<Props> = (props) => {
     },[auto,isUp,down_col,up_col,down_msg,up_msg,status_col,status_msg,announcement])
 
     return(
-        <section>
-            <h1>Status Section</h1>
+        <Card className='bg-transparent mb-3 px-0'>
+            <Card.Header className='px-0'>
+                <h4>Status Section</h4>
+            </Card.Header>
+            
+            <Card.Body className='px-0'>
+                <Row>
+                    <Col className='text-center align-self-center'>
+                        {/* <StatusPreview
+                            {...preview}
+                        /> */}
+                        <StatusSection
+                            statusColor={preview.color}
+                            statusText={preview.message}
+                            announcement={preview.announcement}
+                            lastUpdated={null}
+                        />
+                    </Col> 
+                    <Col lg={8}>
+                        <StatusForm
+                            set={changeStatus}
+                            isUp={isUp}
+                            status={status}
+                        />
+                    </Col>
+                </Row>
+                
 
-            <StatusPreview
-                {...preview}
-            />
-
-            <StatusForm
-                set={changeStatus}
-                isUp={isUp}
-                status={status}
-            />
-
-        </section>
+               
+            </Card.Body>
+        </Card>
     )
 }

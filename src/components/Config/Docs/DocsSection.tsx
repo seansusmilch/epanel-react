@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import {getHomeDoc, saveHomeDoc} from '../../../base'
+import {getHomeDoc, saveHomeDoc} from 'fbase'
 import MDEditor from '@uiw/react-md-editor'
-import { HeadingRenderer } from '../../Md/Renderers'
+import { HeadingRenderer } from 'components/Md/Renderers'
 import './DocsSection.sass'
 
 export const DocSection:React.FC = (props) => {
