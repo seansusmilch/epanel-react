@@ -7,7 +7,7 @@ const flatten = (text: string, child:React.ReactElement<any>, i:number, a:string
     trash = a
     // const cast = <string>child
     //@ts-ignore 
-    return typeof child === 'string' ? text + child : React.Children.toArray(child.props.children).reduce<string>(flatten, text);
+    return typeof child === 'string' ? text + child as string : React.Children.toArray(child.props.children).reduce<string>(flatten, text) as string;
 }
   /**
    * HeadingRenderer is a custom renderer
