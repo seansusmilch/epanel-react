@@ -4,20 +4,20 @@ import "./App.sass"
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
-import { Navigation } from './components/Navigation/Navigation'
-import { Home } from './components/Home'
-import { Config } from './components/Config'
-import { NotFoundError } from './components/Error/Error'
-import {InvitePage} from './components/Invite'
+import { Navigation } from 'components/Navigation/Navigation'
+import { Home } from 'components/Home'
+import { Config } from 'components/Config'
+import { NotFoundError } from 'components/Error/Error'
+import {InvitePage} from 'components/Invite'
+import {LoginPage,UserProvider,LogoutPage} from 'components/Auth'
+import { ToTop } from 'components/Common'
+import { Ombi } from 'components/Ombi'
 
-
-import {signInWithGoogle, getStatus, setStatus} from './base'
-import {LoginPage,UserProvider,LogoutPage} from './components/Auth'
+import {signInWithGoogle, getStatus, setStatus} from 'fbase'
 
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
-import { ToTop } from './components/Common'
-import { Ombi } from './components/Ombi'
+
 
 const App: React.FC = () => {
 

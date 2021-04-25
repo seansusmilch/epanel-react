@@ -1,11 +1,11 @@
 import React from 'react'
-import { Invite } from '../../Props'
-import {timeSince} from '../../Helper'
+import { Invite } from 'components/Props'
+import {timeSince} from 'components/Helper'
 import { X } from 'react-bootstrap-icons'
 import {store} from 'react-notifications-component'
 
 interface Props{
-    invite: Invite
+    invite: Invite,
     handleDelete: (id:string)=>void
 }
 

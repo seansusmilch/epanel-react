@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {isMobile} from 'react-device-detect'
-import {timeSince} from '../../Helper'
+import {timeSince} from 'components/Helper'
 import './ServerStatus.sass'
 
 interface Props {

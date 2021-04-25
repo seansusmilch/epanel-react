@@ -2,7 +2,8 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/functions'
-import {StatusProps, InviteUse, Invite} from '../components/Props'
+import 'firebase/storage'
+import {StatusProps, InviteUse, Invite} from 'components/Props'
 
 const fireConf = {
     apiKey: process.env.REACT_APP_FIRE_API_KEY,
@@ -27,11 +28,13 @@ export const signInWithGoogle = () => {
     auth.signInWithPopup(provider)
 }
 
+let conf_coll = firestore.collection('config')
+
 export const getStatus = async()=>{
     console.log('Getting status')
 
-    let coll = firestore.collection('config')
-    let statusdoc = await coll.doc('status').get()
+
+    let statusdoc = await conf_coll.doc('status').get()
     let statusdata = statusdoc.data()
 
     // console.log(statusdata)
@@ -41,14 +44,13 @@ export const getStatus = async()=>{
 export const setStatus = async(newStatus:StatusProps)=>{
 
     console.log('Submitting status:', newStatus)
-    let coll = firestore.collection('config')
 
     if(!newStatus.auto.enabled){
         newStatus.lastUpdated.auto = false
         newStatus.lastUpdated.time = Date.now()
     }
 
-    coll.doc('status').set(newStatus)
+    conf_coll.doc('status').set(newStatus)
 }
 
 export const getUser = async(uid:string)=>{
@@ -201,4 +203,12 @@ export const saveHomeDoc = async(data:string | undefined)=>{
     }
 
     doc.set(newData)
+}
+
+
+const storageRef = firebase.storage().ref()
+
+export const uploadImageFile = async(file:File, filename:string) => {
+    const newImageRef = storageRef.child(`img/${filename}`)
+    newImageRef.put(file)
 }

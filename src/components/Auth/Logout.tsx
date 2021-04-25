@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {auth} from '../../base'
+import {auth} from 'fbase'
 import {Redirect} from 'react-router'
 
 export const LogoutPage: React.FC = ()=>{

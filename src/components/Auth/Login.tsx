@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Redirect} from 'react-router'
-import {UserContext} from '../Auth'
+import {UserContext} from 'components/Auth'
 import Div100vh from 'react-div-100vh'
 
 import './login.sass'

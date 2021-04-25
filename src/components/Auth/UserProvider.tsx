@@ -1,6 +1,12 @@
 import React, {createContext, useEffect, useState} from 'react'
-import {auth, getUser} from '../../base'
+import {auth, getUser} from 'fbase'
 
+// import * as base from ''
+// console.log(base)
+// const auth = base.auth
+// const getUser = base.getUser
+
+console.log(auth)
 export const UserContext = createContext(auth.currentUser as any)
 
 export interface User {

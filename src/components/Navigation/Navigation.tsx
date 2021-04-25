@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import './nav.css'
 import { NavLink } from 'react-router-dom'
-import {UserContext} from '../Auth'
+import {UserContext} from 'components/Auth'
 
 import {isMobile} from 'react-device-detect'
 

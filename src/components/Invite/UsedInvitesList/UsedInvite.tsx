@@ -1,10 +1,10 @@
 import React from 'react'
-import { InviteUse } from '../../Props'
-import {timeSince} from '../../Helper'
+import { InviteUse } from 'components/Props'
+import {timeSince} from 'components/Helper'
 import { Check, Exclamation, X } from 'react-bootstrap-icons'
 
 interface Props{
-    invite_use: InviteUse
+    invite_use: InviteUse,
     handleDelete: (id:string)=>void
 }
 

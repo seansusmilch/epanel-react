@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import {InviteForm, OpenInvitesList, InviteInfo, UsedInvitesList} from './'
-import {UserContext} from '../Auth'
+import {UserContext} from 'components/Auth'
 
 interface Props{
 

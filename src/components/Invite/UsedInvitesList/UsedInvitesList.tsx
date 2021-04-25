@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
-import { getInviteUses, deleteInviteUse } from '../../../base'
-import { InviteUse } from '../../Props'
+import { getInviteUses, deleteInviteUse } from 'fbase'
+import { InviteUse } from 'components/Props'
 import { UsedInvite } from './UsedInvite'
 import './UsedInvitesList.sass'
 

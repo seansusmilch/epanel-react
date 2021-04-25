@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {UserContext} from '../Auth'
+import {UserContext} from 'components/Auth'
 import {BackButton} from './BackButton'
 import Iframe from 'react-iframe'
 import './Ombi.sass'

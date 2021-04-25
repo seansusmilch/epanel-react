@@ -1,6 +1,6 @@
 import React from 'react'
 import {Formik, Form, Field} from 'formik'
-import {funcUseInvite} from '../../../base'
+import {funcUseInvite} from 'fbase'
 import {store} from "react-notifications-component"
 
 interface Props{

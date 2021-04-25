@@ -1,6 +1,6 @@
 import React from 'react'
 import {Formik, Form, Field} from 'formik'
-import {randomString} from '../../Helper'
+import {randomString} from 'components/Helper'
 
 interface Props{
     setModalOpen: (val:boolean)=>void
