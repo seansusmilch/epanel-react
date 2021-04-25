@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { getHomeDoc } from '../../base'
-import { HeadingRenderer } from '../Md/Renderers'
+import { getHomeDoc } from 'fbase'
+import { HeadingRenderer, ImageRenderer } from 'components/Md'
 
 export const HomeDoc:React.FC = (props)=>{
     const [md, setMd] = useState<string>('')
@@ -21,7 +21,7 @@ export const HomeDoc:React.FC = (props)=>{
         <ReactMarkdown 
             source={md} 
             allowDangerousHtml={true} 
-            renderers={{'heading':HeadingRenderer}}
+            renderers={{'heading':HeadingRenderer, 'image':ImageRenderer}}
             />
         :
         <p>Loading...</p>
