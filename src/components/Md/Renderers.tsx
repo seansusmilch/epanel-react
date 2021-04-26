@@ -1,5 +1,6 @@
 // import React, { ReactComponentElement } from 'react'
 import React from 'react'
+import { isMobile } from 'react-device-detect';
 // import { JsxElement } from 'typescript';
 
 const flatten = (text: string, child:React.ReactElement<any>, i:number, a:string[]):string => {
@@ -40,11 +41,11 @@ interface ImgProps {
 
 export const ImageRenderer:React.FC<ImgProps> = (props) => (
     <a href={props.src}>
-        <img className='img-fluid rounded mx-auto d-block'
+        <img className='img-fluid rounded mx-0'
             alt={props.alt} 
             src={props.src} 
             title={props.title} 
-            style={{ maxWidth: '50vh' }}  
+            style={isMobile?{ maxHeight: '50vh'}:{ maxWidth: '50vw'}}  
         />
     </a>
     )

@@ -28,6 +28,7 @@ export const Home:React.FC<Props> = (props)=>{
         console.log(hash)
         if(hash!==''){
             const scrll = setInterval(() => {
+                    window.scrollTo(0,0)
                     const id = hash.replace('#', '')
                     const element = document.getElementById(id)
                     // console.log(element)
