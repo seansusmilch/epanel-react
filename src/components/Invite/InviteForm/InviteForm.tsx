@@ -2,6 +2,8 @@ import React from 'react'
 import {Formik, Form, Field} from 'formik'
 import {funcUseInvite} from 'fbase'
 import {store} from "react-notifications-component"
+import {OverlayTrigger, Tooltip, Button} from 'react-bootstrap'
+import {Info} from 'react-bootstrap-icons'
 
 interface Props{
     // useInvite: ()=>number // returns useful code to indicate success or failure.
@@ -206,7 +208,7 @@ export const InviteForm:React.FC<Props> = (props) => {
                                         name='local_username' 
                                         className='form-control' 
                                         disabled={formik.isSubmitting} 
-                                        placeholder=''
+                                        placeholder='First name and last initial will do'
                                         required
                                     />
                                 </div>
@@ -216,12 +218,23 @@ export const InviteForm:React.FC<Props> = (props) => {
                                 <label 
                                     htmlFor="display_name" 
                                     className='col-sm-3 col-form-label'
-                                    >DisplayName</label>
+                                    >DisplayName
+                                        <OverlayTrigger
+                                            placement='bottom'
+                                            overlay={(props)=>
+                                            <Tooltip id='button-tooltip' {...props}>
+                                                This is the <u>Display Name</u> you chose when following the <code>How do I join?</code> steps.
+                                            </Tooltip>}
+                                        >
+                                            <Button className='ml-2 py-1 px-2'><Info/></Button>
+                                        </OverlayTrigger>    
+                                </label>
                                 <div className='col-sm-9'>
                                     <Field as='input' 
                                         name='display_name' 
                                         className='form-control' 
-                                        disabled={formik.isSubmitting} 
+                                        disabled={formik.isSubmitting}
+                                        placeholder='displayname you used to sign up with'
                                         required
                                     />
                                 </div>
