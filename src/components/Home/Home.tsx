@@ -101,7 +101,7 @@ export const Home:React.FC<Props> = (props)=>{
 
             
             {/* markdonw */}
-            <section className='container p-0'>
+            {/* <section className='container p-0'>
                 {user != null ? 
                 <HomeDoc/>
                 :
@@ -109,6 +109,9 @@ export const Home:React.FC<Props> = (props)=>{
                     <h3 className="bg-danger rounded d-inline p-3">Please login to see info</h3>
                 </div>
                 }
+            </section> */}
+            <section className='container p-0'>
+                <HomeDoc/>
             </section>
             
 
