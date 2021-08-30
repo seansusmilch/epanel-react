@@ -3,6 +3,7 @@ import {Status} from './Status/Status'
 import {StatusProps, NewStatus} from '../Props'
 import {UserContext} from '../Auth'
 import { DocSection } from "./Docs/DocsSection"
+import {NotFoundError} from 'components/Error'
 
 
 interface Props{
@@ -78,9 +79,7 @@ export const Config: React.FC<Props> = (props) => {
             <DocSection/>
         </div>
         :
-        <div>
-            Please log in
-        </div>
+        <NotFoundError/>
         // <Redirect to='/'/>
     )
 }
