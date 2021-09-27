@@ -15,7 +15,7 @@ export const Ombi:React.FC = ()=>{
             <div className='Buttons m0'
                 style={isMobile?
                     {
-                        top:'0px',
+                        bottom:'0px',
                         right:'100px',
                         opacity:'1'
                     }
