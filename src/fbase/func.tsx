@@ -16,7 +16,7 @@ import {StatusProps, InviteUse, Invite} from 'components/Props'
 // }
 const fireConf = {
     apiKey: "AIzaSyDRd09q5us_3E3I74JQ86pll3oJFS3tSE8",
-    authDomain: "epanel-test.firebaseapp.com",
+    authDomain: "minecraftsexy.website",
     databaseURL: "https://epanel-test.firebaseio.com",
     projectId: "epanel-test",
     storageBucket: "epanel-test.appspot.com",
