@@ -104,7 +104,7 @@ export const OpenInvitesList:React.FC<Props> = (props)=>{
                         <div className='modal-dialog modal-dialog-centered'>
                             <div className='modal-content bg-dark rounded'>
                                 <div className='modal-header'>
-                                    <h4 className='modal-title'>Pogg modal title</h4>
+                                    <h4 className='modal-title'>New Invite</h4>
                                     <button className='close text-white' onClick={()=>setOpen(false)}><span aria-hidden="true">&times;</span></button>
                                 </div>
                                 <NewInviteForm setModalOpen={setOpen} handleCreate={handleCreate}/>

@@ -49,7 +49,7 @@ export const StatusForm: React.FC<Props> = (props)=>{
                         setSubmitting(false)
 
                         store.addNotification({
-                            title: "Pogu Champuuuu",
+                            title: "Saved!",
                             message: "Status messages have been updated!",
                             type: "success",
                             insert: "top",

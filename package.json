@@ -48,7 +48,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy": "npm run build && firebase deploy --only hosting",
-    "deploypreview": "npm run build && firebase hosting:channel:deploy poggers",
+    "deploypreview": "npm run build && firebase hosting:channel:deploy epre",
     "lint": "eslint . --ext .ts"
   },
   "browserslist": {

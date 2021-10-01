@@ -8,7 +8,7 @@ import { store } from 'react-notifications-component'
 export const DocSection:React.FC = (props) => {
 
     const [loaded, setLoaded] = useState(false)
-    const [md, setMd] = useState<string | undefined>('poggers')
+    const [md, setMd] = useState<string | undefined>('')
 
     useEffect(()=>{
         (async()=>{

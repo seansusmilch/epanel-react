@@ -80,7 +80,7 @@ export const Status: React.FC<Props> = (props) => {
     // let ann = announcement
     
     useEffect(() => {
-        console.log('poggers', isUp, preview)
+        console.log('Status', isUp, preview)
 
         let newPreview = {...preview}
         newPreview.announcement = announcement
