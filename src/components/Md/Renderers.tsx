@@ -5,7 +5,7 @@ import { isMobile } from 'react-device-detect';
 
 const flatten = (text: string, child:React.ReactElement<any>, i:number, a:string[]):string => {
     let trash:any = i
-    trash = a
+    trash = a + trash
     // const cast = <string>child
     //@ts-ignore 
     return typeof child === 'string' ? text + child as string : React.Children.toArray(child.props.children).reduce<string>(flatten, text) as string;
@@ -24,7 +24,7 @@ export const HeadingRenderer:React.FC<HeadingProps> = (props) => {
     const text = children.reduce<string>(flatten, '');
     // console.log(text)
       //@ts-ignore
-    const slug = text.toLowerCase().replace(/!|\?|\'/,'').replace(/\W/g, '-')
+    const slug = text.toLowerCase().replace(/!|\?|'/,'').replace(/\W/g, '-')
     // console.log(slug)
 
     return (<>

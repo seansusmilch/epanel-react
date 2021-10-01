@@ -1,14 +1,14 @@
-import React, {useContext} from 'react'
-import {UserContext} from 'components/Auth'
-import {BackButton} from './BackButton'
+import React from 'react'
+// import {UserContext} from 'components/Auth'
+// import {BackButton} from './BackButton'
 import Iframe from 'react-iframe'
 import './Ombi.sass'
-import { NewPageButton } from './NewPageButton'
-import { isMobile } from 'react-device-detect'
+// import { NewPageButton } from './NewPageButton'
+// import { isMobile } from 'react-device-detect'
 import { OmbiOverlay } from './OmbiOverlay'
 
 export const Ombi:React.FC = ()=>{
-    const user = useContext(UserContext)
+    // const user = useContext(UserContext)
 
     return(<>
     {/* {user? */}

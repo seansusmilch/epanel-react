@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 // import {Formik, Form, Field, ErrorMessage} from 'formik'
 import {StatusProps} from 'components/Props'
 import {StatusForm} from './StatusForm'
-import {StatusPreview} from './StatusPreview'
 import {StatusSection} from 'components/Home/status/Section'
 // import './status.css'
 import { Card, Col, Row } from 'react-bootstrap'
@@ -79,7 +78,7 @@ export const Status: React.FC<Props> = (props) => {
     // let msg = status_msg
     // let color = status_col
     // let ann = announcement
-
+    
     useEffect(() => {
         console.log('poggers', isUp, preview)
 

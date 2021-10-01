@@ -1,10 +1,6 @@
 import React from 'react'
 
-interface Props{
-
-}
-
-export const InviteInfo:React.FC<Props> = (props) => {
+export const InviteInfo:React.FC = () => {
     return(
         
         <div className='card rounded bg-dark mb-3'>

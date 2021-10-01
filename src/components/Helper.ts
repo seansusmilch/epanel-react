@@ -1,8 +1,8 @@
-export const timeSince = (date: number) => {
+export const timeSince = (date: number):string => {
 
-	var seconds = Math.abs(Math.floor((Date.now() - date) / 1000));
+	const seconds = Math.abs(Math.floor((Date.now() - date) / 1000));
 
-	var interval = seconds / 31536000;
+	let interval = seconds / 31536000;
 
 	if (interval > 1) {
 		return Math.floor(interval) + " years";
@@ -26,11 +26,11 @@ export const timeSince = (date: number) => {
 	return Math.floor(seconds) + " seconds";
 }
 
-export function randomString(length: number) {
-	var result = '';
-	var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-	var charactersLength = characters.length;
-	for (var i = 0; i < length; i++) {
+export const randomString = (length: number):string=>{
+	let result = '';
+	const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	const charactersLength = characters.length;
+	for (let i = 0; i < length; i++) {
 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
 	}
 	return result;

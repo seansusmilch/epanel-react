@@ -2,11 +2,7 @@ import React,{useContext} from 'react'
 import {InviteForm, OpenInvitesList, InviteInfo, UsedInvitesList} from './'
 import {UserContext} from 'components/Auth'
 
-interface Props{
-
-}
-
-export const InvitePage:React.FC<Props> = (props) => {
+export const InvitePage:React.FC = () => {
 
     const user = useContext(UserContext)
 

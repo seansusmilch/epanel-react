@@ -120,8 +120,7 @@ export const InviteForm:React.FC<Props> = (props) => {
         }
 
         if(result.err != {}){
-            for(let [key,val] of Object.entries(result.err)){
-                key=key
+            for(let [,val] of Object.entries(result.err)){
                 store.addNotification({
                     title: '😭 Error',
                     message: val as string,
