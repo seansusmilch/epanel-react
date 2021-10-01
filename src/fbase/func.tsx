@@ -5,14 +5,24 @@ import 'firebase/functions'
 import 'firebase/storage'
 import {StatusProps, InviteUse, Invite} from 'components/Props'
 
+// const fireConf = {
+//     apiKey: process.env.REACT_APP_FIRE_API_KEY,
+//     authDomain: process.env.REACT_APP_FIRE_AUTH_DOMAIN,
+//     databaseURL: process.env.REACT_APP_FIRE_DB_URL,
+//     projectId: process.env.REACT_APP_FIRE_PROJ_ID,
+//     storageBucket: process.env.REACT_APP_FIRE_STORAGE_BUCKET,
+//     messagingSenderId: process.env.REACT_APP_FIRE_MSG_ID,
+//     appId: process.env.REACT_APP_FIRE_APP_ID
+// }
 const fireConf = {
-    apiKey: process.env.REACT_APP_FIRE_API_KEY,
-    authDomain: process.env.REACT_APP_FIRE_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_FIRE_DB_URL,
-    projectId: process.env.REACT_APP_FIRE_PROJ_ID,
-    storageBucket: process.env.REACT_APP_FIRE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIRE_MSG_ID,
-    appId: process.env.REACT_APP_FIRE_APP_ID
+    apiKey: "AIzaSyDRd09q5us_3E3I74JQ86pll3oJFS3tSE8",
+    authDomain: "epanel-test.firebaseapp.com",
+    databaseURL: "https://epanel-test.firebaseio.com",
+    projectId: "epanel-test",
+    storageBucket: "epanel-test.appspot.com",
+    messagingSenderId: "593149639940",
+    appId: "1:593149639940:web:aac246a82230c873aa6451",
+    measurementId: "G-RF5PKWN84H"
 }
 
 firebase.initializeApp(fireConf)
