@@ -42,7 +42,7 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                                     <img src={'./logos/jackett-icon.webp'} className="qlink" alt=""/>
                                 </a> */}
                                 <a href="https://gaming.minecraftsexy.website/prowlarr" className="dropdown-item p-2">
-                                    <img src='https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/prowlarr-banner.png' className="qlink" alt=""/>
+                                    <img src='https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/prowlarr-banner.png' width='128px' className="qlink" alt=""/>
                                 </a>
                                 <a href="https://gaming.minecraftsexy.website/radarr" className="dropdown-item p-2">
                                     <img src={'./logos/radarr-icon.webp'} className="qlink" alt=""/>
@@ -51,7 +51,7 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                                     <img src={'./logos/sonarr-icon.webp'} className="qlink" alt=""/>
                                 </a>
                                 <a href="https://dock.minecraftsexy.website" className="dropdown-item p-2">
-                                    <img src='https://www.docker.com/sites/default/files/social/docker_facebook_share.png' className="qlink" alt=""/>
+                                    <img src='https://www.docker.com/sites/default/files/social/docker_facebook_share.png' className="qlink" width='128px' alt=""/>
                                 </a>
                             </div>
                         </div>
