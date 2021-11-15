@@ -11,7 +11,7 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
     return (
         <div className='mr-auto ml-auto bg-dark p-1 rounded' id='qlinks'>
             <div className='mr-auto ml-auto' id='qlinks-title'>
-                <a href="https://dl.minecraftsexy.website">Q</a>uick Links
+                Links
             </div>
 
             <div className="d-flex justify-content-center flex-lg-nowrap">
