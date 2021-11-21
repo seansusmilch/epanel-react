@@ -37,9 +37,11 @@
     font-weight: 500
 
 .qlink
-    max-height: 10vh
-    max-width: 17vw
+    max-height: min(10vh, 128px)
+    max-width: min(17vw, 128px)
 
+.qlink::hover
+    opacity: .8
 
 
 @media(max-width:767px)
