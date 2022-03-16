@@ -23,7 +23,7 @@
     "firebase": "^8.0.0",
     "firebase-admin": "^9.3.0",
     "formik": "^2.2.1",
-    "marked": "^2.0.0",
+    "marked": "^4.0.10",
     "node-cron": "^2.0.3",
     "react": "^16.14.0",
     "react-bootstrap": "^1.5.2",
