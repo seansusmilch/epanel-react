@@ -22,8 +22,13 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                     </a>
                 </div>
                 <div className="p-2">
-                    <a href="/ombi" title='Ombi'>
+                    {/* <a href="/ombi" title='Ombi'>
                         <img src={'./logos/ombi-icon.webp'} className="qlink" alt=""/>
+                    </a> */}
+                    <a href='https://reqs.thestu.xyz' title='Jellyseerr'>
+                        <img src={'https://raw.githubusercontent.com/Fallenbagel/jellyseerr/main/public/android-chrome-196x196_maskable.png'}
+                            className='qlink' alt=''
+                            />
                     </a>
                 </div>
 
