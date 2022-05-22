@@ -18,5 +18,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_EPANEL_TEST }}'
           channelId: live
           projectId: epanel-test
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
