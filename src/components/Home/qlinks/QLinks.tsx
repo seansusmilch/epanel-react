@@ -21,11 +21,16 @@ export const QLinks: React.FC<Props> = (props:Props)=>{
                         <img src={'./logos/emby-icon.webp'} className="qlink" alt=""/>
                     </a>
                 </div>
-                <div className="p-2">
+                {/* <div className="p-2">
                     <a href="/ombi" title='Ombi'>
                         <img src={'./logos/ombi-icon.webp'} className="qlink" alt=""/>
                     </a>
-                </div>
+                </div> */}
+                <a href='https://reqs.thestu.xyz' target='_blank' title='Jellyseerr'>
+                    <img src={'https://raw.githubusercontent.com/Fallenbagel/jellyseerr/main/public/android-chrome-192x192_maskable.png'}
+                        className='qlink rounded' alt=''
+                        />
+                </a>
 
                 {props.isLoggedIn && props.isAdmin ? 
 
